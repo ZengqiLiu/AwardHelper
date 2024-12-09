@@ -1,0 +1,62 @@
+/* General Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Remove spacing between table borders */
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #ddd; /* Outer border for the table */
+}
+
+/* Header Row Styles */
+.table thead th {
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Darker text for contrast */
+    padding: 12px;
+    text-align: center; /* Align header text to the left */
+    border: 1px solid #ddd; /* Add border to header cells */
+    font-weight: bold;
+}
+
+/* Data Row Styles */
+.table tbody td {
+    padding: 12px;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #ddd; /* Border for table cells */
+}
+
+/* Data Cell Styles */
+.table td ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+/* List Item Styles */
+.table td ul li {
+    margin-bottom: 5px; /* Add spacing between list items */
+}
+
+
+/* Row Hover Effect */
+.table tbody tr:hover {
+    background-color: #f9f9f9; /* Slightly lighter background on hover */
+}
+
+/* Alternate Row Colors */
+.table tbody tr:nth-child(even) {
+    background-color: #f4f4f4; /* Light gray for alternate rows */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table {
+        font-size: 14px; /* Slightly smaller font size on smaller screens */
+    }
+    .table thead th,
+    .table tbody td {
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+}

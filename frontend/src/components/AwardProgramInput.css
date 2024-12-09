@@ -1,0 +1,137 @@
+/* Dropdown Wrapper */
+.dropdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dropdown-wrapper .label-and-textbox {
+    display: flex;
+    width: 100%;
+    flex-direction: row; /* Prevent label from shrinking */
+    gap: 10px; /* Space between label and textbox */
+    align-items: center; /* Ensure vertical alignment */
+    white-space: nowrap; /* Prevent wrapping of label text */
+}
+
+.dropdown-wrapper .label-and-textbox label {
+    width: 35%;
+}
+
+/* Input Dropdown Container */
+.input-dropdown-container {
+    display: flex;
+    flex-direction: column; /* Stack input and error message vertically */
+    position: relative;
+    width: 100%; /* Ensure dropdown occupies full width */
+    box-sizing: border-box;
+}
+
+.input-dropdown-container div {
+    display: block;
+}
+
+.input-dropdown-container input {
+    flex: 1; /* Allow the input to expand and fill available space */
+    padding: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%; /* Ensure consistent width */
+}
+
+.input-dropdown-container input:focus {
+    border-color: #00bcd4; /* Highlight border on focus */
+}
+
+.input-dropdown-container input[style*='red'] {
+    border-color: red !important; /* Override border color for invalid inputs */
+}
+
+/* Dropdown List */
+.dropdown-list {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    z-index: 1;
+    box-sizing: border-box;
+    border-radius: 5px; /* Rounded corners for better aesthetics */
+}
+
+.group-name {
+    font-weight: bold;
+    padding: 8px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.group-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.group-item:hover {
+    background-color: #e2e2e2; /* Highlight group item on hover */
+}
+
+
+/* Input Wrapper */
+.input-wrapper {
+    position: relative;
+    width: 100%; /* Ensure the input spans the full width */
+    box-sizing: border-box;
+}
+
+.input-wrapper input {
+    width: 100%; /* Make sure the input spans the width of the wrapper */
+    padding: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Award Program List */
+#award-program-list-1 {
+    display: none; /* Ensure it's hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+/* Add Program Checkbox */
+.add-program-checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between checkbox and label text */
+}
+
+/*Validation Error*/
+.validation-error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-left: 1%;
+    width: 100%;
+    white-space: nowrap; /* Prevent wrapping of error text */
+    visibility: hidden; /* Hide the error message but keep its space */
+    height: 1.2em; /* Reserve space even when hidden */
+}
+
+.validation-error.visible {
+    visibility: visible; /* Make the error message visible when needed */
+}

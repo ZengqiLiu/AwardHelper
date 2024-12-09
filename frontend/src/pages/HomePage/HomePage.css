@@ -1,0 +1,96 @@
+
+
+/* Introduction */
+.intro {
+    display: block;
+    font-size: 1.2em;          /* Adjust font size as needed */
+    line-height: 1.7;        /* Increase line height for readability */
+    text-align: justify;     /* Justify the text for a clean edge */
+    margin: 20px 30px;          /* Add margin above and below the paragraph */
+    padding: 20px;           /* Add padding inside for breathing room */
+    background-color: #fef9e7; /* Light beige background */
+    border: 1px solid #ddd; /* Light border for definition */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.intro h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    margin-top: 0;
+    margin-bottom: 10px;     /* Space between paragraphs */
+}
+
+.intro-with-background {
+    padding: 15px;
+    margin-top: 5px;
+    background-color: #f9f9f9; /* Optional: Light background for emphasis */
+    border-left: 4px solid #ccc; /* Optional: Left border for a stylish touch */
+    border-radius: 5px;      /* Rounded corners */
+}
+
+/* Remark */
+.remark {
+    font-size: 0.9em; 
+    font-style: italic;  
+    color: #666;    
+    margin-top: -10px;   
+    display: block; 
+}
+
+/* Blocks */
+.block {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: start;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.block h2 {
+    margin-top: 0;
+}
+
+/* Block Content */
+.block-content {
+    display: flex; /* Enables flex layout */
+    justify-content: space-between; /* Pushes items to opposite sides */
+    align-items: left; /* Vertically aligns items in the container */
+    gap: 0px; /* Adds spacing between the content and input */
+}
+
+.text-content {
+    width: 50%; /* Each takes up half the width */
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.input-content {
+    width: 50%; /* Each takes up half the width */
+    box-sizing: border-box; /* Ensures padding is included in width */
+    text-align: left; /* Align content within input-content */
+    padding-left: 10px; /* Optional: Add some padding if needed */
+}
+
+
+/* Main Section */
+section {
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    display: flex;
+    flex: 1;
+}
+
+section.searching-method {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}

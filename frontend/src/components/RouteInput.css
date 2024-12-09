@@ -1,0 +1,53 @@
+/* Layover and Stopover Points */
+.add-layover-stopover {
+    display: none;
+    margin-top: 10px;
+}
+
+.layover-stopover-point {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-group {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.additional-info {
+    width: 150px;
+    padding: 5px;
+    visibility: hidden;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.add-more-button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    align-self: center;
+}
+
+/* Details and Lists */
+details {
+    display: flex;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}

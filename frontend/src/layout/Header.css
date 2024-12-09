@@ -1,0 +1,36 @@
+/* Header */
+header {
+    background-color: #e0f7fa;
+    font-size: 1.2em;
+    padding: 15px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+header p {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+header a {
+    color: #000;
+    text-decoration: inherit;
+    margin-top: 40px;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+    margin-right: 20px;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    margin-right: 20px;
+}

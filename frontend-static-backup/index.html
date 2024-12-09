@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Award Travel Helper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script src="scripts/main.js"></script>
+<body>
+    <header>
+        <p>Award Travel Helper</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h1>Welcome to the ideal place for planning your award mile usage. </h1>
+        <p>Decide whether to pay cash or use points for each trip and determine which award program will save you the most for each journey. </p>
+        <div class="intro-with-background">
+            <p><b>Still exploring options? </b> Review the details of various award programs, including points requirements, change and cancellation fees, layover and stopover policies, and more. </p>
+            <p><b>Already planned your travel?</b> Simply enter your itinerary and this tool will help you get the best value from your points and money.</p>
+            <p><b>Have a preferred airline?</b> Find the most affordable way to get onboard!</p>
+        </div>
+    </section>
+
+    <section class="searching-method">
+        <div class="block">
+            <h2>Search By Issuing Airlines</h2>
+            <p>Which airline/bank/hotel award miles do you have?*</p>
+            <p class="remark">*Currently selected <b>airline</b> programs only.</p>
+            <div class="dropdown-wrapper">
+                <label for="award-program-1">Award Program 1:</label>
+                <div class="input-dropdown-container">
+                    <input type="text" id="award-program-1" name="award-program-1" placeholder="Select an award program" >
+                    <div id="award-program-list-1"></div>
+                </div>
+            </div>                 
+        </div>
+
+        <div class="block">
+            <h2>Search By Operating Airlines*</h2>
+            <p>What specific airlines do you prefer to take?</p>            
+            <p class="remark">*Feature coming soon.</p>
+        </div>
+
+        <div class="block">
+            <h2>Search By Routes*</h2>
+            <p class="remark">*Feature coming soon.</p>
+            <p>Simply type your origin, destnition, and maybe transfer airports!</p>
+            <label for="from">From:</label>
+            <input type="text" id="from" name="from">
+            <label for="to">To:</label>
+            <input type="text" id="to" name="to"><br>        
+
+            <label>
+                <input type="checkbox" id="direct-only"> Direct flights only
+            </label>
+
+            <br>
+            <label>
+                <input type="checkbox" id="layover-stopover-checkbox" onclick="toggleStopover()"> Specify transfer points
+            </label>
+
+            <!-- Hidden content, initially hidden and shown only when the checkbox is checked -->
+            <div class="add-layover-stopover">
+                <p>Stopover: less than 24 hours</p>
+                <p>Layover: more than 24 hours</p>
+                <p>You may add at most 5 transfer points.</p>
+            
+                <!-- Logic is too complex, I will come back later to improve it -->
+                <div class="layover-stopover-point initial-point">
+                    <div class="checkbox-textbox-group">
+                        <label>Point 1</label>
+                        <label>
+                            <input type="checkbox" class="layover-checkbox" onclick="toggleTextbox(this)"> Layover
+                        </label>
+                        <label>
+                            <input type="checkbox" class="stopover-checkbox" onclick="toggleTextbox(this)"> Stopover
+                        </label>
+                        <input type="text" class="additional-info" style="visibility: hidden; height: 30px;">
+                    </div>
+                    <div class="button-group">
+                        <button class="add-more-points-button" onclick="showNextRow(this)" style="display: none;">Add more points</button>
+                    </div>
+                </div>
+            
+                <!-- Additional Rows - Initially Hidden -->
+                <div class="layover-stopover-point" style="display: none;">
+                    <div class="checkbox-textbox-group">
+                        <label>Point 2</label>
+                        <label>
+                            <input type="checkbox" class="layover-checkbox" onclick="toggleTextbox(this)"> Layover
+                        </label>
+                        <label>
+                            <input type="checkbox" class="stopover-checkbox" onclick="toggleTextbox(this)"> Stopover
+                        </label>
+                        <input type="text" class="additional-info" style="visibility: hidden; height: 30px;">
+                    </div>
+                    <div class="button-group">
+                        <button class="add-more-points-button" onclick="showNextRow(this)" style="display: none;">Add more points</button>
+                    </div>
+                </div>
+
+                <div class="layover-stopover-point" style="display: none;">
+                    <div class="checkbox-textbox-group">
+                        <label>Point 3</label>
+                        <label>
+                            <input type="checkbox" class="layover-checkbox" onclick="toggleTextbox(this)"> Layover
+                        </label>
+                        <label>
+                            <input type="checkbox" class="stopover-checkbox" onclick="toggleTextbox(this)"> Stopover
+                        </label>
+                        <input type="text" class="additional-info" style="visibility: hidden; height: 30px;">
+                    </div>
+                    <div class="button-group">
+                        <button class="add-more-points-button" onclick="showNextRow(this)" style="display: none;">Add more points</button>
+                    </div>
+                </div>   
+                
+                <div class="layover-stopover-point" style="display: none;">
+                    <div class="checkbox-textbox-group">
+                        <label>Point 4</label>
+                        <label>
+                            <input type="checkbox" class="layover-checkbox" onclick="toggleTextbox(this)"> Layover
+                        </label>
+                        <label>
+                            <input type="checkbox" class="stopover-checkbox" onclick="toggleTextbox(this)"> Stopover
+                        </label>
+                        <input type="text" class="additional-info" style="visibility: hidden; height: 30px;">
+                    </div>
+                    <div class="button-group">
+                        <button class="add-more-points-button" onclick="showNextRow(this)" style="display: none;">Add more points</button>
+                    </div>
+                </div>  
+
+                <div class="layover-stopover-point" style="display: none;">
+                    <div class="checkbox-textbox-group">
+                        <label>Point 5</label>
+                        <label>
+                            <input type="checkbox" class="layover-checkbox" onclick="toggleTextbox(this)"> Layover
+                        </label>
+                        <label>
+                            <input type="checkbox" class="stopover-checkbox" onclick="toggleTextbox(this)"> Stopover
+                        </label>
+                        <input type="text" class="additional-info" style="visibility: hidden; height: 30px;">
+                    </div>
+                    <div class="button-group">
+                        <button class="add-more-points-button" onclick="showNextRow(this)" style="display: none;">Add more points</button>
+                    </div>
+                </div>  
+                <!-- Repeat as needed for 5 rows -->
+            </div>
+                   
+        </div>
+
+
+    </section>
+    <footer>
+        Not affiliated with any award programs. Data is for reference only; please verify directly with the programs before making any decisions.
+    </footer>
+</body>
+</html>
