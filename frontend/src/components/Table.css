@@ -1,12 +1,21 @@
+/* Scrollable Table Container */
+.table-container {
+    max-height: 300px; /* Set the maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: auto; /* Prevent horizontal scrolling */
+    border: 1px solid #ddd; /* Optional: Add a border around the container */
+    margin: 0 auto; /* Center the table container */
+}
+
 /* General Table Styles */
 .table {
     width: 100%;
     border-collapse: collapse; /* Remove spacing between table borders */
-    margin: 20px 0;
+    margin: 0;
     font-size: 16px;
     text-align: left;
     background-color: #fff;
-    border: 1px solid #ddd; /* Outer border for the table */
+    border: none; 
 }
 
 /* Header Row Styles */
@@ -17,6 +26,10 @@
     text-align: center; /* Align header text to the left */
     border: 1px solid #ddd; /* Add border to header cells */
     font-weight: bold;
+    position: sticky; /* Make the header sticky */
+    top: 0;
+    z-index: 2;
+    white-space: nowrap; /* Prevent header text from wrapping */
 }
 
 /* Data Row Styles */

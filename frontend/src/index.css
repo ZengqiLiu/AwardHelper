@@ -23,3 +23,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Global hyperlink styles */
+.hyperlink {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block; /* Adjust depending on your use case */
+  margin-bottom: 10px; /* Optional: spacing below the link */
+}
+
+.hyperlink:hover {
+  text-decoration: none; /* Optional: remove underline on hover */
+  color: #0056b3; /* Slightly darker blue for hover */
+}

@@ -7,34 +7,37 @@ function Table({ columns, data }) {
     }
 
     return (
-        <table className="table">
-            <thead>
-                <tr>
-                    {columns.map((col, index) => (
-                        <th key={index}>{col.label}</th>
-                    ))}
-                </tr>
-            </thead>
-            <tbody>
-                {data.map((row, rowIndex) => (
-                    <tr key={rowIndex}>
-                        {columns.map((col, colIndex) => (
-                            <td key={colIndex}>
-                                {Array.isArray(row[col.field]) ? (
-                                    <ul>
-                                        {row[col.field].map((item, itemIndex) => (
-                                            <li key={itemIndex}>{item}</li>
-                                        ))}
-                                    </ul>
-                                ) : (
-                                    row[col.field]
-                                )}
-                            </td>
+        <div className='table-container'>
+            <table className="table">
+                <thead>
+                    <tr>
+                        {columns.map((col, index) => (
+                            <th key={index}>{col.label}</th>
                         ))}
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {data.map((row, rowIndex) => (
+                        <tr key={rowIndex}>
+                            {columns.map((col, colIndex) => (
+                                <td key={colIndex}>
+                                    {Array.isArray(row[col.field]) ? (
+                                        <ul>
+                                            {row[col.field].map((item, itemIndex) => (
+                                                <li key={itemIndex}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    ) : (
+                                        row[col.field]
+                                    )}
+                                </td>
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+
     );
 }
 

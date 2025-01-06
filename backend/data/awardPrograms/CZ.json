@@ -1,50 +1,29 @@
 {
-    "airlines": [
-        { "airline": "Alaska Airlines", "code": "AS" },
-        { "airline": "Air Tahiti Nui", "code": "TN" },
-        { "airline": "American Airlines", "code": "AA" },
-        { "airline": "British Airways", "code": "BA" },
-        { "airline": "Cape Air", "code": "9K" },
-        { "airline": "Cathay Pacific", "code": "CX" },
-        { "airline": "Etihad Airways", "code": "EY" },
-        { "airline": "Fiji Airways", "code": "FJ" },
-        { "airline": "Finnair", "code": "AY" },
-        { "airline": "GOL Airlines", "code": "G3" },
-        { "airline": "Hawaiian Airlines", "code": "HA" },
-        { "airline": "Iberia", "code": "IB" },
-        { "airline": "Japan Airlines", "code": "JL" },
-        { "airline": "Malaysia Airlines", "code": "MH" },
-        { "airline": "Qantas Airways", "code": "QF" },
-        { "airline": "Qatar Airways", "code": "QR" },
-        { "airline": "Royal Air Maroc", "code": "AT" },
-        { "airline": "Royal Jordanian Airlines", "code": "RJ" },
-        { "airline": "SriLankan Airlines", "code": "UL" },
-        { "airline": "Aer Lingus", "code": "EI" },
-        { "airline": "China Southern Airlines", "code": "CZ" },
-        { "airline": "IndiGo", "code": "6E" }
-    ],
-    "changeFee": ["0"],
-    "cancellationFee": ["0"],
+    "changeFee": ["50CNY for China domestic flights if changing before 24h of deperature,",
+                  "100CNY for international/Hong Kong/Macau/Taiwan flights if changing before 24h of deperature,",
+                  "100CNY for China domestic flights if changing within 24h of deperature,",
+                  "200CNY for international/Hong Kong/Macau/Taiwan flights if changing within 24h of deperature"],
+    "cancellationFee": ["50% points", "0 for Platinum members"],
     "phoneBookingFee": ["0"],
     "partnerBookingFee": ["0"],
-    "yq": ["No, except on BA"],
-    "layover": ["2 for flights within the USA/Canada", "3 for other destinations"],
+    "yq": ["TBD"],
+    "layover": ["No"],
     "stopover": ["No"],
     "onlineBooking": [
-        "Most"
+        "*Almost all"
     ],
     "phoneBooking": [
-        "EI, CZ, 6E"
+        "TBD"
     ],
-    "hold": ["5d if booked 14d in advance", "24h if booked 24h in advance", "until 2h before departure if booked within 24h of departure"],
-    "roundTrip": ["Not must,", "but may discount"],
-    "moreThanOnePartner": ["Yes"],
-    "mixedCabin": ["Yes, but priced with highest cabin"],
-    "transferInThirdRegion": ["No, with expections attached"],
+    "hold": ["No*"],
+    "roundTrip": ["Not must,", "No discount"],
+    "moreThanOnePartner": ["No"],
+    "mixedCabin": ["No"],
+    "transferInThirdRegion": ["No"],
     "routes": [
         {
-            "departureZone": "CONUS/Canada",
-            "landingZone": "CONUS/Canada",
+            "departureZone": "China",
+            "landingZone": "China",
             "cost": {
                 "economy": "7,500",
                 "business": "15,000",

@@ -1,54 +1,31 @@
 {
-    "airlines": [
-        { "airline": "Alaska Airlines", "code": "AS" },
-        { "airline": "Air Tahiti Nui", "code": "TN" },
-        { "airline": "American Airlines", "code": "AA" },
-        { "airline": "British Airways", "code": "BA" },
-        { "airline": "Cape Air", "code": "9K" },
-        { "airline": "Cathay Pacific", "code": "CX" },
-        { "airline": "Etihad Airways", "code": "EY" },
-        { "airline": "Fiji Airways", "code": "FJ" },
-        { "airline": "Finnair", "code": "AY" },
-        { "airline": "GOL Airlines", "code": "G3" },
-        { "airline": "Hawaiian Airlines", "code": "HA" },
-        { "airline": "Iberia", "code": "IB" },
-        { "airline": "Japan Airlines", "code": "JL" },
-        { "airline": "Malaysia Airlines", "code": "MH" },
-        { "airline": "Qantas Airways", "code": "QF" },
-        { "airline": "Qatar Airways", "code": "QR" },
-        { "airline": "Royal Air Maroc", "code": "AT" },
-        { "airline": "Royal Jordanian Airlines", "code": "RJ" },
-        { "airline": "SriLankan Airlines", "code": "UL" },
-        { "airline": "Aer Lingus", "code": "EI" },
-        { "airline": "China Southern Airlines", "code": "CZ" },
-        { "airline": "IndiGo", "code": "6E" }
-    ],
-    "changeFee": ["0"],
-    "cancellationFee": ["0"],
-    "phoneBookingFee": ["0"],
-    "partnerBookingFee": ["0"],
-    "yq": ["No, except on BA"],
-    "layover": ["2 for flights within the USA/Canada", "3 for other destinations"],
-    "stopover": ["No"],
+    "changeFee": ["100CAD"],
+    "cancellationFee": ["150CAD"],
+    "phoneBookingFee": ["30CAD"],
+    "partnerBookingFee": ["39CAD"],
+    "yq": ["No"],
+    "layover": ["6,", "12h limited in US and Canada"],
+    "stopover": ["1 outside of US and Canada with 5,000"],
     "onlineBooking": [
-        "Most"
+        "All airlines"
     ],
     "phoneBooking": [
-        "EI, CZ, 6E"
+        "-"
     ],
-    "hold": ["5d if booked 14d in advance", "24h if booked 24h in advance", "until 2h before departure if booked within 24h of departure"],
-    "roundTrip": ["Not must,", "but may discount"],
+    "hold": ["No"],
+    "roundTrip": ["Not must,", "No discount"],
     "moreThanOnePartner": ["Yes"],
     "mixedCabin": ["Yes, but priced with highest cabin"],
-    "transferInThirdRegion": ["No, with expections attached"],
+    "transferInThirdRegion": ["Yes"],
     "routes": [
         {
-            "departureZone": "CONUS/Canada",
-            "landingZone": "CONUS/Canada",
+            "departureZone": "North America",
+            "landingZone": "North America",
+            "distance": "0- 500",
             "cost": {
-                "economy": "7,500",
-                "business": "15,000",
-                "first": "15,000"
+                "economy": "6,000-10,000",
+                "premiumEconomy": "10,000-20,000",
+                "business": "15,000-25,000"
             }           
         },
         {
