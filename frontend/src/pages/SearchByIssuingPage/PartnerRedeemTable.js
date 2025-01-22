@@ -1,7 +1,7 @@
 import React from 'react';
 import Table from '../../components/Table';
 
-function SelfRedeemTable({ programDetails }) {
+function PartnerRedeemTable({ programDetails }) {
     const columns = [
         { label: 'From', field: 'departureZone' },
         { label: 'To', field: 'landingZone' },
@@ -12,21 +12,21 @@ function SelfRedeemTable({ programDetails }) {
         { label: 'First', field: 'first' }    
     ];
 
-    if (!programDetails || !programDetails.selfRoutes || programDetails.selfRoutes.length === 0) {
+    if (!programDetails || !programDetails.partnerRoutes || programDetails.partnerRoutes.length === 0) {
         return <p>No information available.</p>;
     }
     // Transform route data to match Table's expected structure
-    const processedData = programDetails.selfRoutes.map((selfRoutes) => ({
-        departureZone: selfRoutes.departureZone,
-        landingZone: selfRoutes.landingZone,
-        economy: selfRoutes.cost?.economy || '-',
-        premiumEconomy: selfRoutes.cost?.premiumEconomy || '-',
-        business: selfRoutes.cost?.business || '-',
-        first: selfRoutes.cost?.first || '-',
-        distance: selfRoutes.distance || '-',
+    const processedData = programDetails.partnerRoutes.map((partnerRoute) => ({
+        departureZone: partnerRoute.departureZone,
+        landingZone: partnerRoute.landingZone,
+        economy: partnerRoute.cost?.economy || '-',
+        premiumEconomy: partnerRoute.cost?.premiumEconomy || '-',
+        business: partnerRoute.cost?.business || '-',
+        first: partnerRoute.cost?.first || '-',
+        distance: partnerRoute.distance || '-',
     }));
 
     return <Table columns={columns} data={processedData} />;
 }
 
-export default SelfRedeemTable;
+export default PartnerRedeemTable;

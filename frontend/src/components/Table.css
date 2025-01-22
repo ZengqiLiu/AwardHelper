@@ -1,5 +1,6 @@
 /* Scrollable Table Container */
 .table-container {
+    position: relative; /* Ensure tooltips can escape the container */
     max-height: 300px; /* Set the maximum height */
     overflow-y: auto; /* Enable vertical scrolling */
     overflow-x: auto; /* Prevent horizontal scrolling */
@@ -62,6 +63,7 @@
 .table tbody tr:nth-child(even) {
     background-color: #f4f4f4; /* Light gray for alternate rows */
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

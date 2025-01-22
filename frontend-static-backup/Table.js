@@ -1,23 +1,20 @@
 import React, { useState, useCallback } from 'react';
 import { Tooltip, TooltipProvider } from 'react-tooltip';
-import CustomModal from './CustomModal';
+import Modal from 'react-modal';
 import './Table.css';
+
+Modal.setAppElement("#root");
 
 function Table({ columns, data }) {
     const [modalData, setModalData] = useState(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    const openModal = useCallback((data) => {
+    const openModal = (data) => {
         setModalData(data);
         setModalIsOpen(true);
-    }, []);
+    };
 
-    const closeModal = useCallback(() => {
-        setModalData(null);
-        setModalIsOpen(false);
-    }, []);
-
-    const renderCellContent = useCallback((cellData) => {
+    const renderCellContent = (cellData) => {
         if (Array.isArray(cellData)) {
             return cellData.map((item, index) => (
                 <React.Fragment key={index}>
@@ -28,6 +25,7 @@ function Table({ columns, data }) {
         }
 
         if (!cellData || !cellData.type) {
+            // Default to regular text if no type is specified
             return <span>{cellData?.content || cellData}</span>;
         }
 
@@ -60,7 +58,7 @@ function Table({ columns, data }) {
                         {cellData.content}
                     </span>
                 );
-            case "link-tooltip":
+            case "link-tooltip": // Handles URL with Tooltip
                 return (
                     <>
                         <a
@@ -79,7 +77,7 @@ function Table({ columns, data }) {
             default:
                 return <span>{cellData.content}</span>;
         }
-    }, [openModal]);
+    };
 
     if (!data || !columns || data.length === 0) {
         return <p>No data available.</p>;
@@ -108,12 +106,18 @@ function Table({ columns, data }) {
                 </tbody>
             </table>
 
-            <CustomModal
-                isOpen={modalIsOpen}
-                modalData={modalData}
-                onClose={closeModal}
-            />
+            {modalData && (
+                <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={() => setModalIsOpen(false)}
+                >
+                    <h2>{modalData.title}</h2>
+                    <p>{modalData.body}</p>
+                    <button onClick={() => setModalIsOpen(false)}>Close</button>
+                </Modal>
+            )}
         </div>
+
     );
 }
 

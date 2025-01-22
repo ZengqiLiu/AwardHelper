@@ -1,54 +1,164 @@
 {
+    "updatedDate": "2025-01-21",
     "airlines": [
-        { "airline": "Alaska Airlines", "code": "AS" },
-        { "airline": "Air Tahiti Nui", "code": "TN" },
-        { "airline": "American Airlines", "code": "AA" },
-        { "airline": "British Airways", "code": "BA" },
-        { "airline": "Cape Air", "code": "9K" },
-        { "airline": "Cathay Pacific", "code": "CX" },
-        { "airline": "Etihad Airways", "code": "EY" },
-        { "airline": "Fiji Airways", "code": "FJ" },
-        { "airline": "Finnair", "code": "AY" },
-        { "airline": "GOL Airlines", "code": "G3" },
-        { "airline": "Hawaiian Airlines", "code": "HA" },
-        { "airline": "Iberia", "code": "IB" },
-        { "airline": "Japan Airlines", "code": "JL" },
-        { "airline": "Malaysia Airlines", "code": "MH" },
-        { "airline": "Qantas Airways", "code": "QF" },
-        { "airline": "Qatar Airways", "code": "QR" },
-        { "airline": "Royal Air Maroc", "code": "AT" },
-        { "airline": "Royal Jordanian Airlines", "code": "RJ" },
-        { "airline": "SriLankan Airlines", "code": "UL" },
-        { "airline": "Aer Lingus", "code": "EI" },
-        { "airline": "China Southern Airlines", "code": "CZ" },
-        { "airline": "IndiGo", "code": "6E" }
+        { "airline": "Alaska Airlines", "code": "AS", "alliance": "Oneworld" },
+        { "airline": "American Airlines", "code": "AA", "alliance": "Oneworld" },
+        { "airline": "British Airways", "code": "BA", "alliance": "Oneworld" },
+        { "airline": "Cathay Pacific", "code": "CX", "alliance": "Oneworld" },
+        { "airline": "Fiji Airways", "code": "FJ", "alliance": "Oneworld" },
+        { "airline": "Finnair", "code": "AY", "alliance": "Oneworld" },
+        { "airline": "Iberia", "code": "IB", "alliance": "Oneworld" },
+        { "airline": "Japan Airlines", "code": "JL", "alliance": "Oneworld" },
+        { "airline": "Malaysia Airlines", "code": "MH", "alliance": "Oneworld" },
+        { "airline": "Qantas Airways", "code": "QF", "alliance": "Oneworld" },
+        { "airline": "Qatar Airways", "code": "QR", "alliance": "Oneworld" },
+        { "airline": "Royal Air Maroc", "code": "AT", "alliance": "Oneworld" },
+        { "airline": "Royal Jordanian Airlines", "code": "RJ", "alliance": "Oneworld" },
+        { "airline": "SriLankan Airlines", "code": "UL", "alliance": "Oneworld" },
+        { "airline": "Air Tahiti Nui", "code": "TN", "alliance": "None" },
+        { "airline": "Cape Air", 
+            "code": "9K",
+            "alliance": "None", 
+            "note": {
+                "type": "modal", 
+                "content": "Selected routes^", 
+                "modalData":{
+                    "title": "Redeemable Routes on Cape Air", 
+                    "tableData": {
+                        "headers": ["Between", "And"],
+                        "rows": [
+                            ["St. Louis, MO (STL)", "Kirksville, MO (IRK)"],
+                            ["St. Louis, MO (STL)", "Marion, IL (MWA)"],
+                            ["St. Louis, MO (STL)", "Owensboro, KY (OWB)"],
+                            ["St. Louis, MO (STL)", "Quincy, IL (UIN)"],
+                            ["Chicago, IL (ORD)", "Manistee, MI (MBL)"],
+                            ["Chicago, IL (ORD)", "Quincy, IL (UIN)"],
+                            ["Nashville, TN (BNA)", "Marion, IL (MWA)"],
+                            ["Nashville, TN (BNA)", "Owensboro, KY (OWB)"]
+                        ]
+                    }
+                }
+            } 
+        },
+        { "airline": "China Southern Airlines", "code": "CZ", "alliance": "None", "note": "Phone booking only" },
+        { "airline": "Etihad Airways", "code": "EY", "alliance": "None" },
+        { "airline": "GOL Airlines", "code": "G3", "alliance": "None" },
+        { "airline": "Hawaiian Airlines", "code": "HA", "alliance": "None", "note": "Between Hawaii and CONUS only?; Inter-island flights must be on a separate ticket?" }
     ],
     "changeFee": ["0"],
     "cancellationFee": ["0"],
     "phoneBookingFee": ["0"],
     "partnerBookingFee": ["0"],
     "yq": ["No, except on BA"],
-    "layover": ["2 for flights within the USA/Canada", "3 for other destinations"],
+    "layover": [
+        {
+            "type": "tooltip",
+            "content": "2^",     
+            "tooltipText": "2 for flights within USA/Canada"
+        }, 
+        {
+            "type": "tooltip",
+            "content": "3^",
+            "tooltipText": "3 for other destinations"
+        }
+    ],
     "stopover": ["No"],
     "onlineBooking": [
         "Most"
     ],
     "phoneBooking": [
-        "EI, CZ, 6E"
+        "CZ"
     ],
-    "hold": ["5d if booked 14d in advance", "24h if booked 24h in advance", "until 2h before departure if booked within 24h of departure"],
-    "roundTrip": ["Not must,", "but may discount"],
+    "hold": [
+        {
+            "type": "tooltip",
+            "content": "5d^",     
+            "tooltipText":"5d if booked 14d in advance"
+        }, 
+        {
+            "type": "tooltip",
+            "content": "24h^",     
+            "tooltipText":"24h if booked 14d-24h in advance"
+        },         
+        {
+            "type": "tooltip",
+            "content": "T-2h^",     
+            "tooltipText":"Until 2h before departure if booked within 24h of departure"
+        }        
+        
+    ],
+    "roundTrip": ["Not must, but may discount"],
     "moreThanOnePartner": ["Yes"],
     "mixedCabin": ["Yes, but priced with highest cabin"],
-    "transferInThirdRegion": ["No, with expections attached"],
-    "routes": [
+    "transferInThirdRegion": [
+        {
+            "type": "modal",
+            "content": "Selected routes*",
+            "modalData": {
+                "title": "Permited Routes for Transfer in 3rd Region", 
+                "tableData": {
+                    "headers": ["Between", "And", "Via"],
+                    "rows": [
+                        ["Africa", "Asia Region 1", "Asia Region 2/Middle East"],
+                        ["Africa", "Asia Region 2", "Middle East"],
+                        ["Africa", "CONUS/Hawaii/Alaska/Canada/Mexico/Caribbean/Central America", "Europe/Middle East"],
+                        ["Africa", "Europe", "Middle East"],
+                        ["Africa", "Indian Subcontinent", "Middle East"],
+                        ["Africa", "South America Region 1","Europe/Middle East"],
+                        ["Africa", "South America Region 2", "Europe/Middle East"],
+                        ["Africa", "South Pacific", "Middle East"],
+                        ["Alaska", "Hawaii", "CONUS/Canada"],
+                        ["Alaska", "Indian Subcontinent", "CONUS/Canada/Europe/Middle East"],
+                        ["Asia Region 1", "Europe", "Asia Region 2 or Middle East or Indian Subcontinent?"],
+                        ["Asia Region 1", "Indian Subcontinent", "Asia Region 2"],
+                        ["Asia Region 1", "Middle East", "Asia Region 2 or Indian Subcontinent"],
+                        ["Asia Region 1", "South Pacific", "Asia Region 2"],
+                        ["Asia Region 2", "CONUS/Hawaii/Alaska/Canada/Mexico/Caribbean", "Asia Region 1"],
+                        ["Asia Region 2", "Europe", "Middle East or Indian Subcontinent?"],
+                        ["Asia Region 2", "Middle East", "Indian Subcontinent"],
+                        ["Caribbean/Mexico", "South Pacific", "CONUS/Canada or South America Region 2?"],
+                        ["Central America", "Indian Subcontinent", "CONUS/Canada/Europe/Middle East"],
+                        ["Central America", "Middle East", "CONUS/Canada/Europe"],
+                        ["Central America", "South Pacific", "South America Region 2?"],
+                        ["Europe", "Indian Subcontinent", "Middle East"],
+                        ["Europe", "South Pacific", "Asia Region 1 or Asia Region 2 or Middle East"],
+                        ["Hawaii", "Indian Subcontinent", "CONUS/Canada/Europe/Middle East"],
+                        ["Indian Subcontinent", "CONUS/Alaska/Canada/Mexico/Caribbean", "Europe/Middle East or HKG by AA, CX and UL"],
+                        ["Indian Subcontinent", "South America Region 1", "Europe? or Middle East?"],
+                        ["Indian Subcontinent", "South America Region 2", "Europe or Middle East"],
+                        ["Indian Subcontinent", "South Pacific", "Asia Region 2"],
+                        ["Middle East", "CONUS/Hawaii/Alaska/Canada/Mexico/Caribbean", "Europe"],
+                        ["Middle East", "South America Region 1", "Europe"],
+                        ["Middle East", "South America Region 2", "Europe or Africa?"],
+                        ["Middle East", "South Pacific", "Asia Region 2 or Indian Subcontinent"],
+                        ["CONUS/Hawaii/Alaska/Canada/Mexico/Caribbean", "South America Region 2", "South America Region 1?"],
+                        ["South America Region 1", "South Pacific", "South America Region 2?"]
+                    ]
+                }
+            }
+        }
+    ],
+    "selfRoutes": [
         {
             "departureZone": "CONUS/Canada",
             "landingZone": "CONUS/Canada",
             "cost": {
                 "economy": "7,500",
-                "business": "15,000",
-                "first": "15,000"
+                "premiumEconomy": {
+                    "type": "tooltip",
+                    "content": "-*",     
+                    "tooltipText":"For short-haul flights equipped with premium economy seats, they are marketed as \"Main Cabin Extra\" seats in the economy class."
+                },
+                "business": {
+                    "type": "tooltip",
+                    "content": "15,000^",     
+                    "tooltipText":"For US-domestic flights, business class is marketed as \"first\"class if the aircraft does not have separate business and first class cabins."
+                },
+                "first": {
+                    "type": "tooltip",
+                    "content": "15,000^",     
+                    "tooltipText":"For US-domestic flights, business class is marketed as \"first\" class, except on aircraft with both business and first class cabins. In such cases, there is no published award price for first class, but it is typically higher than the business class price."
+                }
             }           
         },
         {
@@ -56,17 +166,35 @@
             "landingZone": "Mexico/Caribbean/Central America",
             "cost": {
                 "economy": "10,000",
+                "premiumEconomy": {
+                    "type": "tooltip",
+                    "content": "-*",     
+                    "tooltipText":"For short-haul flights equipped with premium economy seats, they are marketed as \"Main Cabin Extra\" seats in the economy class."
+                },
                 "business": "20,000",
-                "first": "20,000"
+                "first": {
+                    "type": "tooltip",
+                    "content": "20,000^",     
+                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
+                }
             }
         },
         {
             "departureZone": "CONUS/Canada",
-            "landingZone": "South America 1",
+            "landingZone": "South America - Short Haul",
             "cost": {
                 "economy": "15,000",
+                "premiumEconomy": {
+                    "type": "tooltip",
+                    "content": "-*",     
+                    "tooltipText":"For short-haul flights equipped with premium economy seats, they are marketed as \"Main Cabin Extra\" seats in the economy class."
+                },
                 "business": "30,000",
-                "first": "30,000"
+                "first": {
+                    "type": "tooltip",
+                    "content": "30,000^",     
+                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
+                }
             }
         },
         {
@@ -76,7 +204,11 @@
                 "economy": "20,000",
                 "premiumEconomy": "40,000",
                 "business": "60,000",
-                "first": "60,000"
+                "first": {
+                    "type": "tooltip",
+                    "content": "60,000^",     
+                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
+                }
             }
         },
         {
@@ -86,17 +218,25 @@
                 "economy": "25,000",
                 "premiumEconomy": "50,000",
                 "business": "75,000",
-                "first": "75,000"
+                "first": {
+                    "type": "tooltip",
+                    "content": "75,000^",     
+                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
+                }
             }            
         },
         {
             "departureZone": "CONUS/Canada",
-            "landingZone": "South America 2",
+            "landingZone": "South America - Long Haul",
             "cost": {
                 "economy": "30,000",
                 "premiumEconomy": "60,000",
                 "business": "90,000",
-                "first": "90,000"
+                "first": {
+                    "type": "tooltip",
+                    "content": "90,000^",     
+                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
+                }
             }
         },
         {
@@ -106,8 +246,1135 @@
                 "economy": "35,000",
                 "premiumEconomy": "60,000",
                 "business": "95,000",
-                "first": "95,000"
+                "first": {
+                    "type": "tooltip",
+                    "content": "95,000^",     
+                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
+                }
             }
-        }                         
+        },     
+        {
+            "departureZone": "Mexico/Caribbean/Central America",
+            "landingZone": "South America - Short Haul",
+            "cost": {
+                "economy": "15,000*",
+                "premiumEconomy": {
+                    "type": "tooltip",
+                    "content": "-*",     
+                    "tooltipText":"For short-haul flights equipped with premium economy seats, they are marketed as \"Main Cabin Extra\" seats in the economy class."
+                },
+                "business": "30,000*",
+                "first": {
+                    "type": "tooltip",
+                    "content": "30,000*^",     
+                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
+                }
+            }
+        },  
+        {
+            "departureZone": "Mexico/Caribbean/Central America",
+            "landingZone": "Hawaii/Alaska",
+            "cost": {
+                "economy": "20,000*",
+                "premiumEconomy": "40,000*",
+                "business": "60,000*",
+                "first": {
+                    "type": "tooltip",
+                    "content": "60,000*^",     
+                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
+                }
+            }
+        },             
+        {
+            "departureZone": "Mexico/Caribbean/Central America",
+            "landingZone": "South America - Long Haul",
+            "cost": {
+                "economy": "30,000*",
+                "premiumEconomy": "60,000*",
+                "business": "90,000*",
+                "first": {
+                    "type": "tooltip",
+                    "content": "90,000*^",     
+                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
+                }
+            }
+        },
+        {
+            "departureZone": "South America - Short Haul",
+            "landingZone": "Hawaii/Alaska",
+            "cost": {
+                "economy": "20,000*",
+                "premiumEconomy": "40,000*",
+                "business": "60,000*",
+                "first": {
+                    "type": "tooltip",
+                    "content": "60,000*^",     
+                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
+                }
+            }
+        }                                    
+    ],
+    "partnerRoutes": [
+        {
+            "departureZone": "CONUS/Canada",
+            "landingZone": "CONUS/Canada",
+            "cost": {                
+                "economy": "12,500",     
+                "premiumEconomy": "22,500",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "25,000/32,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 32,500. Otherwise, it is 25,000."
+                },               
+                "first": {
+                    "type": "tooltip",
+                    "content": "50,000/57,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 57,500. Otherwise, it is 50,000."
+                }
+            }
+        },
+        {
+            "departureZone": "CONUS/Canada",
+            "landingZone": "Alaska",
+            "cost": {                
+                "economy": "15,000",     
+                "premiumEconomy": "25,000",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "30,000/37,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 37,500. Otherwise, it is 30,000."
+                },               
+                "first": {
+                    "type": "tooltip",
+                    "content": "55,000/62,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 62,500. Otherwise, it is 55,000."
+                }
+            }
+        },
+        {
+            "departureZone": "CONUS/Canada",
+            "landingZone": "Hawaii",
+            "cost": {                
+                "economy": "22,500",     
+                "premiumEconomy": "50,000",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "55,000/62,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 62,500. Otherwise, it is 55,000."
+                },               
+                "first": {
+                    "type": "tooltip",
+                    "content": "80,000/87,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 87,500. Otherwise, it is 80,000."                
+                }
+            }
+        },
+        {
+            "departureZone": "CONUS/Canada",
+            "landingZone": "Mexico/Caribbean/Central America",
+            "cost": {                
+                "economy": "17,500",     
+                "premiumEconomy": {
+                    "type": "tooltip",
+                    "content": "-*",     
+                    "tooltipText":"For AA short-haul flights equipped with premium economy seats, they are marketed as \"Main Cabin Extra\" seats in the economy class."
+                },                
+                "business": {
+                    "type": "tooltip",
+                    "content": "27,500/35,000^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 35,000. Otherwise, it is 27,500."
+                },               
+                "first": {
+                    "type": "tooltip",
+                    "content": "52,500/60,000^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 60,000. Otherwise, it is 52,500."
+                }
+            }
+        },
+        {
+            "departureZone": "CONUS/Canada",
+            "landingZone": "South America Region 1",
+            "cost": {                
+                "economy": "20,000",     
+                "premiumEconomy": {
+                    "type": "tooltip",
+                    "content": "-*",     
+                    "tooltipText":"For AA short-haul flights equipped with premium economy seats, they are marketed as \"Main Cabin Extra\" seats in the economy class."
+                },                
+                "business": {
+                    "type": "tooltip",
+                    "content": "30,000/37,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 37,500. Otherwise, it is 30,000."
+                },               
+                "first": {
+                    "type": "tooltip",                    
+                    "content": "55,000/62,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 62,500. Otherwise, it is 55,000."
+                }
+            }
+        },
+        {
+            "departureZone": "CONUS/Canada",
+            "landingZone": "South America Region 2",
+            "cost": {                
+                "economy": "30,000",     
+                "premiumEconomy": "40,000",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "57,500/65,000^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 65,000. Otherwise, it is 57,500."
+                },               
+                "first": {
+                    "type": "tooltip",
+                    "content": "85,000/92,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 92,500. Otherwise, it is 85,000."
+                }
+            }
+        },
+        {
+            "departureZone": "CONUS/Canada",
+            "landingZone": "Europe",
+            "cost": {                
+                "economy": {
+                    "type": "tooltip",
+                    "content": "22,500/30,000^",      
+                    "tooltipText":"During off-peak periods (1/10 - 3/14, 11/1 - 12/14), the cost is 22,500. Otherwise, it is 30,000."
+                },     
+                "premiumEconomy": "40,000",                
+                "business": "57,500",        
+                "first": "85,000"
+            }
+        },
+        {
+            "departureZone": "CONUS/Canada",
+            "landingZone": "Middle East/Indian Subcontinent",
+            "cost": {                
+                "economy": "40,000",  
+                "premiumEconomy": "62,500",                
+                "business": "70,000",        
+                "first": "115,000"
+            }
+        },
+        {
+            "departureZone": "CONUS/Canada",
+            "landingZone": "Africa",
+            "cost": {                                
+                "economy": "40,000",  
+                "premiumEconomy": "65,000",                
+                "business": "75,000",        
+                "first": "120,000"
+            }
+        },
+        {
+            "departureZone": "CONUS/Canada",
+            "landingZone": "Asia Region 1",
+            "cost": {                                
+                "economy": "35,000",  
+                "premiumEconomy": "50,000",                
+                "business": "60,000",        
+                "first": "80,000"
+            }
+        },
+        {
+            "departureZone": "CONUS/Canada",
+            "landingZone": "Asia Region 2",
+            "cost": {                                
+                "economy": "37,500",  
+                "premiumEconomy": "50,000",                
+                "business": "70,000",        
+                "first": "110,000"
+            }
+        },
+        {
+            "departureZone": "CONUS/Canada",
+            "landingZone": "South Pacific",
+            "cost": {                                
+                "economy": "40,000",  
+                "premiumEconomy": "65,000",                
+                "business": "80,000",        
+                "first": "110,000"
+            }
+        },
+        {
+            "departureZone": "Alaska",
+            "landingZone": "Alaska",
+            "cost": {                                
+                "economy": "12,500",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "25,000^",     
+                    "tooltipText":"For US-domestic AS flights, business class is marketed as \"first\" class."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "-^",     
+                    "tooltipText":"For US-domestic AS flights, business class is marketed as \"first\" class."
+                }
+            }
+        },
+        {
+            "departureZone": "Alaska",
+            "landingZone": "Hawaii",
+            "cost": {                                
+                "economy": "25,000",     
+                "premiumEconomy": "52,500",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "57,500/65,000^",                        
+                    "tooltipText": "If segments within US/Canada include a lie-flat seat, the cost is 65,000. Otherwise, it is 57,500."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "85,000/92,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 92,500. Otherwise, it is 85,000."
+                }
+            }
+        },
+        {
+            "departureZone": "Alaska",
+            "landingZone": "Mexico/Caribbean/Central America",
+            "cost": {                                
+                "economy": "20,000",     
+                "premiumEconomy": "27,500",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "32,500/40,000^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 37,500. Otherwise, it is 40,000."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "57,500/65,000^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 65,000. Otherwise, it is 57,500."
+                }
+            }
+        },
+        {
+            "departureZone": "Alaska",
+            "landingZone": "South America Region 1",
+            "cost": {                                
+                "economy": "22,500",     
+                "premiumEconomy": "32,500",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "35,000/42,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 42,500. Otherwise, it is 35,000."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "60,000/67,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 67,500. Otherwise, it is 60,000."
+                }
+            }
+        },
+        {
+            "departureZone": "Alaska",
+            "landingZone": "South America Region 2",
+            "cost": {                                
+                "economy": "32,500",     
+                "premiumEconomy": "42,500",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "62,500/70,000^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 70,000. Otherwise, it is 62,500."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "90,000/97,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 97,500. Otherwise, it is 90,000."
+                }
+            }
+        },
+        {
+            "departureZone": "Alaska",
+            "landingZone": "Europe",
+            "cost": {                                
+                "economy": "32,500",
+                "premiumEconomy": "42,500",                
+                "business": "62,500",        
+                "first": "90,000"
+            }
+        },
+        {
+            "departureZone": "Alaska",
+            "landingZone": "Middle East/Indian Subcontinent",
+            "cost": {                                
+                "economy": "42,500",  
+                "premiumEconomy": "65,000",                
+                "business": "75,000",        
+                "first": "120,000"
+            }
+        },
+        {
+            "departureZone": "Alaska",
+            "landingZone": "Africa",
+            "cost": {                                
+                "economy": "42,500",  
+                "premiumEconomy": "67,500",                
+                "business": "77,500",        
+                "first": "125,000"
+            }
+        },
+        {
+            "departureZone": "Alaska",
+            "landingZone": "Asia Region 1",
+            "cost": {                                
+                "economy": "37,500",  
+                "premiumEconomy": "52,500",                
+                "business": "65,000",        
+                "first": "85,000"
+            }
+        },
+        {
+            "departureZone": "Alaska",
+            "landingZone": "Asia Region 2",
+            "cost": {                                
+                "economy": "37,500",  
+                "premiumEconomy": "52,500",                
+                "business": "72,500",        
+                "first": "112,500"
+            }
+        },
+        {
+            "departureZone": "Alaska",
+            "landingZone": "South Pacific",
+            "cost": {                                
+                "economy": "42,500",  
+                "premiumEconomy": "67,500",                
+                "business": "82,500",        
+                "first": "112,500"
+            }
+        },
+        {
+            "departureZone": "Hawaii",
+            "landingZone": "Hawaii",
+            "cost": {                                
+                "economy": "7,500",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "15,000^",     
+                    "tooltipText":"For US-domestic HA flights, business class is marketed as \"first\" class."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "-^", 
+                    "tooltipText":"For US-domestic HA flights, business class is marketed as \"first\" class."
+                }
+            }
+        },
+        {
+            "departureZone": "Hawaii",
+            "landingZone": "Mexico/Caribbean/Central America",
+            "cost": {                                
+                "economy": "25,000",     
+                "premiumEconomy": "52,500",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "57,500/65,000^",     
+                    "tooltipText":"If any segment includes a lie-flat seat, the cost is 65,000. Otherwise, it is 57,500."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "85,000/92,500^",     
+                    "tooltipText":"If any segment includes a lie-flat seat, the cost is 92,500. Otherwise, it is 85,000."
+                }
+            }
+        },
+        {
+            "departureZone": "Hawaii",
+            "landingZone": "South America Region 1",
+            "cost": {                                
+                "economy": "30,000",     
+                "premiumEconomy": "57,500",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "60,000/67,500^",     
+                    "tooltipText":"If any segment includes a lie-flat seat, the cost is 67,500. Otherwise, it is 60,000."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "90,000/97,500^",     
+                    "tooltipText":"If any segment includes a lie-flat seat, the cost is 97,500. Otherwise, it is 90,000."
+                }
+            }
+        },
+        {
+            "departureZone": "Hawaii",
+            "landingZone": "South America Region 2",
+            "cost": {                                
+                "economy": "40,000",     
+                "premiumEconomy": "67,500",                
+                "business": {
+                    "type": "tooltip",
+                    "content": "80,000/87,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 87,500. Otherwise, it is 80,000."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "102,500/110,000^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 110,000. Otherwise, it is 102,500."
+                }
+            }
+        },
+        {
+            "departureZone": "Hawaii",
+            "landingZone": "Europe",
+            "cost": {                                
+                "economy": "40,000",
+                "premiumEconomy": "67,500",                
+                "business": "80,000",        
+                "first": "102,500"
+            }
+        },
+        {
+            "departureZone": "Hawaii",
+            "landingZone": "Middle East/Indian Subcontinent",
+            "cost": {                                
+                "economy": "47,500",  
+                "premiumEconomy": "77,500",                
+                "business": "92,500",        
+                "first": "140,000"
+            }
+        },
+        {
+            "departureZone": "Hawaii",
+            "landingZone": "Africa",
+            "cost": {                                
+                "economy": "50,000",  
+                "premiumEconomy": "77,500",                
+                "business": "92,500",        
+                "first": "140,000"
+            }            
+        },        
+        {
+            "departureZone": "Hawaii",
+            "landingZone": "Asia Region 1",
+            "cost": {                                
+                "economy": "32,500",  
+                "premiumEconomy": "42,500",                
+                "business": "52,500",        
+                "first": "75,000"
+            }
+        },
+        {
+            "departureZone": "Hawaii",            
+            "landingZone": "Asia Region 2",                        
+            "cost": {                                
+                "economy": "35,000",  
+                "premiumEconomy": "45,000",                
+                "business": "55,000",        
+                "first": "80,000"
+            }
+        },
+        {
+            "departureZone": "Hawaii",
+            "landingZone": "South Pacific",
+            "cost": {                                
+                "economy": "37,500",  
+                "premiumEconomy": "50,000",                
+                "business": "65,000",        
+                "first": "90,000"
+            }
+        },
+        {
+            "departureZone": "Caribbean",
+            "landingZone": "Caribbean",
+            "cost": {                                
+                "economy": "7,500"
+            }
+        },
+        {
+            "departureZone": "Caribbean",
+            "landingZone": "Mexico/Central America",
+            "cost": {                                
+                "economy": "20,000",               
+                "business": {
+                    "type": "tooltip",
+                    "content": "32,500/40,000^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 40,000. Otherwise, it is 32,500."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "57,500/65,000^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 65,000. Otherwise, it is 57,500."
+                }
+            }
+        },
+        {
+            "departureZone": "Mexico/Caribbean/Central America",
+            "landingZone": "South America Region 1",
+            "cost": {                                
+                "economy": "22,500",                  
+                "business": {
+                    "type": "tooltip",
+                    "content": "35,000/42,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 42,500. Otherwise, it is 35,000."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "60,000/67,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 67,500. Otherwise, it is 60,000."
+                }
+            }
+        },
+        {
+            "departureZone": "Mexico/Caribbean/Central America",
+            "landingZone": "South America Region 2",
+            "cost": {                                
+                "economy": "32,500",                  
+                "business": {
+                    "type": "tooltip",
+                    "content": "62,500/70,000^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 70,000. Otherwise, it is 62,500."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "90,000/97,500^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 97,500. Otherwise, it is 90,000."
+                }
+            }
+        },
+        {
+            "departureZone": "Mexico/Caribbean/Central America",
+            "landingZone": "Europe",
+            "cost": {                                
+                "economy": "32,500",
+                "premiumEconomy": "42,500", 
+                "business": "62,500",        
+                "first": "90,000"
+            }
+        },
+        {
+            "departureZone": "Mexico/Caribbean/Central America",
+            "landingZone": "Middle East/Indian Subcontinent",
+            "cost": {                                
+                "economy": "45,000",  
+                "premiumEconomy": "67,500",                
+                "business": "80,000",        
+                "first": "130,000"
+            }
+        },
+        {
+            "departureZone": "Mexico/Caribbean/Central America",
+            "landingZone": "Africa",
+            "cost": {                                
+                "economy": "45,000",  
+                "premiumEconomy": "67,500",                
+                "business": "80,000", 
+                "first": "135,000"
+            }
+        },
+        {
+            "departureZone": "Mexico/Caribbean",
+            "landingZone": "Asia Region 1",
+            "cost": {                                
+                "economy": "37,500",  
+                "premiumEconomy": "52,500",                
+                "business": "72,500",        
+                "first": "85,000"
+            }
+        },
+        {
+            "departureZone": "Mexico/Caribbean",
+            "landingZone": "Asia Region 2",
+            "cost": {                                
+                "economy": "37,500",  
+                "premiumEconomy": "52,500",                
+                "business": "75,000",        
+                "first": "112,500"
+            }
+        },
+        {
+            "departureZone": "Mexico/Caribbean/Central America/South America Region 1/South America Region 2",
+            "landingZone": "South Pacific",
+            "cost": {                                
+                "economy": "45,000",  
+                "premiumEconomy": "70,000",                
+                "business": "82,500",            
+                "first": "112,500"
+            }
+        },
+        {
+            "departureZone": "Mexico",
+            "landingZone": "Central America",
+            "cost": {                                
+                "economy": "20,000",               
+                "business": {
+                    "type": "tooltip",
+                    "content": "32,500/40,000^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 40,000. Otherwise, it is 32,500."
+                },        
+                "first": {
+                    "type": "tooltip",
+                    "content": "57,500/65,000^",     
+                    "tooltipText":"If segments within US/Canada include a lie-flat seat, the cost is 65,000. Otherwise, it is 57,500."
+                }
+            }
+        },
+        {
+            "departureZone": "South America Region 1",
+            "landingZone": "South America Region 1",
+            "cost": {                                
+                "economy": "10,000",                  
+                "business": "20,000"
+            }
+        },
+        {
+            "departureZone": "South America Region 1",
+            "landingZone": "South America Region 2",
+            "cost": {                                
+                "economy": "12,500",                  
+                "business": "25,000"
+            }
+        },
+        {
+            "departureZone": "South America Region 1",
+            "landingZone": "Europe",
+            "cost": {                                
+                "economy": "40,000",
+                "premiumEconomy": "55,000", 
+                "business": "67,500"
+            }
+        },
+        {
+            "departureZone": "South America Region 1",
+            "landingZone": "Middle East/Indian Subcontinent",
+            "cost": {                                
+                "economy": "60,000",  
+                "premiumEconomy": "75,000",                
+                "business": "87,500",        
+                "first": "130,000"
+            }
+        },
+        {
+            "departureZone": "South America Region 1",
+            "landingZone": "Africa",
+            "cost": {                                
+                "economy": "60,000",  
+                "premiumEconomy": "75,000",                
+                "business": "90,000",        
+                "first": "135,000"
+            }
+        },
+        {
+            "departureZone": "Peru",
+            "landingZone": "Peru",
+            "cost": {                                
+                "economy": "6,000"
+            }
+        },
+        {
+            "departureZone": "Colombia",
+            "landingZone": "Colombia",
+            "cost": {                                
+                "economy": "6,000"
+            }
+        },
+        {
+            "departureZone": "Ecuador",
+            "landingZone": "Ecuador",
+            "cost": {                                
+                "economy": "5,000"
+            }
+        },
+        {
+            "departureZone": "South America Region 2",
+            "landingZone": "South America Region 2",
+            "cost": {                                
+                "economy": "10,000",                 
+                "business": "20,000"
+            }
+        },
+        {
+            "departureZone": "South America Region 2",
+            "landingZone": "Europe",
+            "cost": {                                
+                "economy": "50,000",
+                "premiumEconomy": "70,000", 
+                "business": "87,500",        
+                "first": "120,000"
+            }
+        },
+        {
+            "departureZone": "South America Region 2",
+            "landingZone": "Middle East/Indian Subcontinent",
+            "cost": {                                
+                "economy": "60,000",  
+                "premiumEconomy": "77,500",                
+                "business": "90,000",        
+                "first": "135,000"
+            }
+        },
+        {
+            "departureZone": "South America Region 2",
+            "landingZone": "Africa",
+            "cost": {                                
+                "economy": "70,000",  
+                "premiumEconomy": "85,000",                
+                "business": "97,500",        
+                "first": "135,000"
+            }
+        },
+        {
+            "departureZone": "Argentina",
+            "landingZone": "Argentina",
+            "cost": {                                
+                "economy": "6,000"
+            }
+        },
+        {
+            "departureZone": "Chile (exculding Easter Island)",
+            "landingZone": "Chile (exculding Easter Island)",
+            "cost": {                                
+                "economy": "6,000"
+            }
+        },
+        {
+            "departureZone": "Brazil",
+            "landingZone": "Brazil",
+            "cost": {                                
+                "economy": "7,500",
+                "business": "17,500"
+            }
+        },
+        {
+            "departureZone": "Santiago",
+            "landingZone": "Easter Island",
+            "cost": {
+                "economy": "17,500",
+                "business": "30,000"
+            }
+        },
+        {
+            "departureZone": "Europe",
+            "landingZone": "Europe",
+            "cost": {                                
+                "economy": "12,500",
+                "premiumEconomy": "17,500", 
+                "business": "22,500"
+            }
+        },
+        {
+            "departureZone": "Europe",
+            "landingZone": "Middle East/Indian Subcontinent",
+            "cost": {                                
+                "economy": "20,000",  
+                "premiumEconomy": "32,500",                
+                "business": "42,500",        
+                "first": "62,500"
+            }
+        },
+        {
+            "departureZone": "Europe",
+            "landingZone": "Africa",
+            "cost": {                                
+                "economy": "30,000",  
+                "premiumEconomy": "47,500",                
+                "business": "55,000",        
+                "first": "80,000"
+            }
+        },
+        {
+            "departureZone": "Europe",
+            "landingZone": "Asia Region 1",
+            "cost": {                                
+                "economy": "35,000",  
+                "premiumEconomy": "52,500",                
+                "business": "75,000",        
+                "first": "90,000"
+            }
+        },
+        {
+            "departureZone": "Europe",
+            "landingZone": "Asia Region 2",
+            "cost": {                                
+                "economy": "35,000",  
+                "premiumEconomy": "55,000",                
+                "business": "75,000",        
+                "first": "90,000"
+            }
+        },
+        {
+            "departureZone": "Europe",
+            "landingZone": "South Pacific",
+            "cost": {                                
+                "economy": "60,000",  
+                "premiumEconomy": "70,000",                
+                "business": "85,000",        
+                "first": "115,000"
+            }
+        },
+        {
+            "departureZone": "Finland",
+            "landingZone": "Finland",
+            "cost": {                                
+                "economy": "10,000"
+            }
+        },
+        {
+            "departureZone": "Spain and Balearic Islands",
+            "landingZone": "Spain and Balearic Islands",
+            "cost": {                                
+                "economy": "10,000",
+                "business": "15,000"
+            }
+        },
+        {
+            "departureZone": "UK",
+            "landingZone": "UK",
+            "cost": {                                
+                "economy": "10,000",
+                "business": "15,000"
+            }
+        },
+        {
+            "departureZone": "Germany",
+            "landingZone": "Germany",
+            "cost": {                                
+                "economy": "10,000",
+                "business": "15,000"
+            }
+        },
+        {
+            "departureZone": "Morocco",
+            "landingZone": "Morocco",
+            "cost": {                                
+                "economy": "5,000",
+                "business": "10,000"
+            }
+        },
+        {
+            "departureZone": "Middle East",
+            "landingZone": "Middle East",
+            "cost": {                                
+                "economy": "17,500",
+                "premiumEconomy": "22,500", 
+                "business": "30,000",
+                "first": "40,000"
+            }
+        },
+        {
+            "departureZone": "Middle East",
+            "landingZone": "Indian Subcontinent",
+            "cost": {                                
+                "economy": "17,500",
+                "premiumEconomy": "20,000", 
+                "business": "30,000",
+                "first": "40,000"
+            }
+        },
+        {
+            "departureZone": "Middle East/Indian Subcontinent",
+            "landingZone": "Africa",
+            "cost": {                                
+                "economy": "30,000",  
+                "premiumEconomy": "40,000",                
+                "business": "55,000",        
+                "first": "80,000"
+            }
+        },
+        {
+            "departureZone": "Middle East/Indian Subcontinent",
+            "landingZone": "Asia Region 1",
+            "cost": {                                
+                "economy": "22,500",  
+                "premiumEconomy": "32,500",                
+                "business": "40,000",        
+                "first": "50,000"
+            }        
+        },
+        {
+            "departureZone": "Middle East/Indian Subcontinent",
+            "landingZone": "Asia Region 2",
+            "cost": {                                
+                "economy": "25,000",  
+                "premiumEconomy": "35,000",                
+                "business": "40,000",        
+                "first": "50,000"
+            }
+        },
+        {
+            "departureZone": "Middle East/Indian Subcontinent",
+            "landingZone": "South Pacific",
+            "cost": {                                
+                "economy": "42,500",  
+                "premiumEconomy": "57,500",                
+                "business": "80,000",        
+                "first": "100,000"
+            }
+        },
+        {
+            "departureZone": "Jordan",
+            "landingZone": "Jordan",
+            "cost": {                                
+                "economy": "7,500",
+                "business": "10,000"
+            }
+        },
+        {
+            "departureZone": "Indian Subcontinent",
+            "landingZone": "Indian Subcontinent",
+            "cost": {                                
+                "economy": "17,500",
+                "premiumEconomy": "20,000",
+                "business": "30,000",
+                "first": "40,000"
+            }
+        },
+        {
+            "departureZone": "India",
+            "landingZone": "India",
+            "cost": {                                
+                "economy": "10,000",
+                "business": "17,500"
+            }
+        },
+        {
+            "departureZone": "Africa",
+            "landingZone": "Africa",
+            "cost": {                                
+                "economy": "17,500",
+                "business": "35,000"
+            }
+        },
+        {
+            "departureZone": "Africa",
+            "landingZone": "Asia Region 1",
+            "cost": {                                
+                "economy": "45,000",  
+                "premiumEconomy": "57,500",                
+                "business": "75,000",        
+                "first": "90,000"
+            }
+        },
+        {
+            "departureZone": "Africa",
+            "landingZone": "Asia Region 2",
+            "cost": {                                
+                "economy": "40,000",  
+                "premiumEconomy": "55,000",                
+                "business": "70,000",        
+                "first": "80,000"        
+            }
+        },
+        {
+            "departureZone": "Africa",
+            "landingZone": "South Pacific",
+            "cost": {                                
+                "economy": "42,500",  
+                "premiumEconomy": "57,500",                
+                "business": "80,000",        
+                "first": "100,000"
+            }
+        },
+        {
+            "departureZone": "South Africa/Namibia/Zimbabwe/Zambia/Mauritius",
+            "landingZone": "South Africa/Namibia/Zimbabwe/Zambia/Mauritius",
+            "cost": {                                
+                "economy": "10,000",
+                "business": "17,500"
+            }
+        },
+        {
+            "departureZone": "Asia Region 1",
+            "landingZone": "Asia Region 1",
+            "cost": {                                
+                "economy": "12,500",
+                "premiumEconomy": "17,500",
+                "business": "20,000",
+                "first": "30,000"
+            }
+        },
+        {
+            "departureZone": "Asia Region 1",
+            "landingZone": "Asia Region 2",
+            "cost": {                                
+                "economy": "20,000",
+                "premiumEconomy": "25,000",
+                "business": "30,000",
+                "first": "40,000"
+            }
+        },
+        {
+            "departureZone": "Asia Region 1",
+            "landingZone": "South Pacific",
+            "cost": {                                
+                "economy": "30,000",
+                "premiumEconomy": "35,000",
+                "business": "40,000",
+                "first": "60,000"        
+            }
+        },
+        {
+            "departureZone": "Japan",
+            "landingZone": "Japan",
+            "cost": {                                
+                "economy": "7,500",
+                "business": "15,000",
+                "first": "20,000"
+            }
+        },
+        {
+            "departureZone": "Asia Region 2",
+            "landingZone": "Asia Region 2",
+            "cost": {                                
+                "economy": "17,500",
+                "premiumEconomy": "20,000",
+                "business": "22,500",
+                "first": "32,500"
+            }
+        },
+        {
+            "departureZone": "Asia Region 2",
+            "landingZone": "South Pacific",
+            "cost": {                                
+                "economy": "30,000",
+                "premiumEconomy": "35,000",
+                "business": "40,000",
+                "first": "50,000"        
+            }
+        },
+        {
+            "departureZone": "South Pacific",
+            "landingZone": "South Pacific",
+            "cost": {                                
+                "economy": "15,000",
+                "premiumEconomy": "25,000",
+                "business": "30,000"
+            }
+        },
+        {
+            "departureZone": "Fiji",
+            "landingZone": "Fiji",
+            "cost": {                                
+                "economy": "5,000",
+                "business": "10,000"   
+            }
+        },
+        {
+            "departureZone": "Australia",
+            "landingZone": "Australia",
+            "cost": {                                
+                "economy": "10,000",
+                "premiumEconomy": "15,000",
+                "business": "20,000"
+            }
+        },
+        {
+            "departureZone": "Australia",
+            "landingZone": "New Zealand",
+            "cost": {                                
+                "economy": "15,000",
+                "premiumEconomy": "20,000",
+                "business": "25,000"
+            }
+        },
+        {
+            "departureZone": "Papeete, Tahiti",
+            "landingZone": "Easter Island, Chile",
+            "cost": {                                
+                "economy": "17,500",
+                "business": "30,000"
+            }
+        }
     ]
 }
