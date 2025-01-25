@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import AirlineTable from './AirlineTable';
 import FeeTable from './FeeTable';
@@ -6,7 +6,6 @@ import RouteTable from './RouteTable';
 import SelfRedeemTable from './SelfRedeemTable';
 import PartnerRedeemTable from './PartnerRedeemTable';
 import TicketingTable from './TicketingTable';
-import CustomModal from '../../components/CustomModal';
 import './SearchByIssuingPage.css';
 
 // Helper function to extract the two-letter code
@@ -15,99 +14,61 @@ function extractCode(item) {
     return match ? match[1] : null;
 }
 
-function processProgramDetails(data) {
-    // Iterate through all keys in the programDetails object
-    Object.keys(data).forEach((key) => {
-        if (Array.isArray(data[key])) {
-            // Map each item to ensure consistent structure
-            data[key] = data[key].map((item) => {
-                if (typeof item === "string") {
-                    return { content: item }; // Default to plain text
-                } else if (item.type === "tooltip") {
-                    return {
-                        content: item.content,
-                        type: "tooltip",
-                        tooltipText: item.tooltipText
-                    };
-                } else if (item.type === "link") {
-                    return {
-                        content: item.content,
-                        type: "link",
-                        url: item.url
-                    };
-                } else {
-                    return item; // Leave other types as-is
-                }
-            });
-        }
-    });
-    return data;
-}
-
-
 function SearchByIssuingPage() {
     const location = useLocation();
     const { programs } = location.state || { programs: [] };
-    // const programList = Array.isArray(programs) ? programs : Object.values(programs);
-    const programList = React.useMemo(() => {
-        return Array.isArray(programs) ? programs : Object.values(programs);
-    }, [programs]);
-    
+
+    console.log("Programs:", programs);
+
+    // Memoized list of programs
+    const programList = React.useMemo(
+        () => (Array.isArray(programs) ? programs : Object.values(programs || {})),
+        [programs]
+    );
+    console.log("Program List:", programList);
 
     const [programDetails, setProgramDetails] = useState({});
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [currentModalData, setCurrentModalData] = useState(null);
-
-    // Use a ref to track programDetails without causing re-renders
-    const programDetailsRef = useRef(programDetails);
-
-    const openModal = (data) => {
-        setCurrentModalData(data);
-        setModalIsOpen(true);
-    };
-
-    const closeModal = () => {
-        setCurrentModalData(null);
-        setModalIsOpen(false);
-    };
+    console.log("Program Details:", programDetails);
 
     useEffect(() => {
-        programDetailsRef.current = programDetails; // Sync ref with state
-    }, [programDetails]);
-
-    useEffect(() => {
+        console.log("useEffect triggered");
         const fetchDetails = async () => {
             const codesToFetch = programList
                 .map((program) => extractCode(program))
-                .filter((code) => code && !programDetailsRef.current[code]); // Use ref to avoid dependency
+                .filter((code) => code && !programDetails[code]); // Only fetch missing codes
+                console.log("Codes to fetch:", codesToFetch);
 
             if (codesToFetch.length === 0) return;
 
-            const fetchPromises = codesToFetch.map((code) =>
-                fetch(`http://localhost:5000/api/award-programs/${code}`)
-                    .then((response) => response.json())
-                    .then((data) => {
-                        const normalizedData = processProgramDetails(data);
-                        setProgramDetails((prevDetails) => ({
-                            ...prevDetails,
-                            [code]: normalizedData,
-                        }));
-                    })
-                    .catch((error) => {
-                        console.error(`Error fetching details for ${code}:`, error);
-                    })
-            );
-
             try {
-                await Promise.all(fetchPromises);
+                const results = await Promise.all(
+                    codesToFetch.map(async (code) => {
+                        const response = await fetch(`http://localhost:5000/api/award-programs/${code}`);
+                        console.log("Fetching program details for code:", code);
+                        const data = await response.json();
+                        console.log("Fetched program details for code:", code, data);
+                        return { code, data };
+                    })
+                );
+
+                const newDetails = {};
+                results.forEach(({ code, data }) => {
+                    newDetails[code] = data;
+                });
+                
+                setProgramDetails((prevDetails) => ({
+                    ...prevDetails,
+                    ...newDetails, // Merge only new details
+                }));                
             } catch (error) {
                 console.error("Error fetching program details:", error);
             }
         };
 
         fetchDetails();
-    }, [programList]);   // Dependency on stable programList
-    
+    }, [programDetails, programList]); 
+
+
     return (
         <div className="search-by-issuing-page">
             <section className="intro">
@@ -117,7 +78,9 @@ function SearchByIssuingPage() {
                     including cost, change and cancel, layover and stopover, expiration, etc.
                 </p>
                 <div className="intro-with-background">
-                    <p className="remark">* means this is an experienced rather than an officially published rule.</p>
+                    <p className="remark">
+                        * means this is an experienced rather than an officially published rule.
+                    </p>
                     <p className="remark">^ means clicking to view more details.</p>
                 </div>
             </section>
@@ -132,55 +95,46 @@ function SearchByIssuingPage() {
                             <div key={index} className="block">
                                 <div className="program-name-container">
                                     <h2 className="program-name">{program}</h2>
-                                    <p className="updated-date">Updated on: {details?.updatedDate || "Not available"}</p>
+                                    <p classepend only on programListName="updated-date">
+                                        Updated on: {details?.updatedDate || "Not available"}
+                                    </p>
                                 </div>
+                                
                                 <h3>Full Redeemable Airline List</h3>
-                                {code && programDetails[code] ? (
-                                    <AirlineTable programDetails={programDetails[code]} openModal={openModal} />
-                                ) : (
-                                    <p>Loading details for additional fees...</p>
-                                )}                                
+                                {code && programDetails[code] && (
+                                    <AirlineTable programDetails={programDetails[code]} />
+                                )}
+                                
                                 <h3>Additional Fees</h3>
-                                {code && programDetails[code] ? (
-                                    <FeeTable programDetails={programDetails[code]} openModal={openModal} />
-                                ) : (
-                                    <p>Loading details for additional fees...</p>
+                                {code && programDetails[code] && (
+                                    <FeeTable programDetails={programDetails[code]} />
                                 )}
+                                
                                 <h3>Ticketing Policy</h3>
-                                {code && programDetails[code] ? (
-                                    <TicketingTable programDetails={programDetails[code]} openModal={openModal} />
-                                ) : (
-                                    <p>Loading details for routing and ticketing policy...</p>
+                                {code && programDetails[code] && (
+                                    <TicketingTable programDetails={programDetails[code]} />
                                 )}
+                                
                                 <h3>Routing Policy</h3>
-                                {code && programDetails[code] ? (
-                                    <RouteTable programDetails={programDetails[code]} openModal={openModal} />
-                                ) : (
-                                    <p>Loading details for routing and ticketing policy...</p>
+                                {code && programDetails[code] && (
+                                    <RouteTable programDetails={programDetails[code]} />
                                 )}
-                                <h3>Redeem on Flights Operated by {code} </h3>
-                                {code && programDetails[code] ? (
-                                    <SelfRedeemTable programDetails={programDetails[code]} openModal={openModal} />
-                                ) : (
-                                    <p>Loading details for redeeming on flights operated by {code}...</p>
+                                
+                                <h3>Redeem on Flights Operated by {code}</h3>
+                                {code && programDetails[code] && (
+                                    <SelfRedeemTable programDetails={programDetails[code]} />
                                 )}
-                                <h3>Redeem on Flights Operated by Partners </h3>
-                                {code && programDetails[code] ? (
-                                    <PartnerRedeemTable programDetails={programDetails[code]} openModal={openModal} />
-                                ) : (
-                                    <p>Loading details for redeeming on flights operated by {code}...</p>
+                                <h3>Redeem on Flights Operated by Partners</h3>
+                                {code && programDetails[code] && (
+                                    <PartnerRedeemTable programDetails={programDetails[code]} />
                                 )}
+                                
+                                
                             </div>
                         );
                     })}
                 </div>
             </section>
-            {/* Custom Modal Component */}
-            <CustomModal
-                isOpen={modalIsOpen}
-                modalData={currentModalData}
-                onClose={closeModal}
-            />
         </div>
     );
 }

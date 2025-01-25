@@ -1,92 +1,90 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import { Tooltip, TooltipProvider } from 'react-tooltip';
 import CustomModal from './CustomModal';
 import './Table.css';
 
 function Table({ columns, data }) {
-    const [modalData, setModalData] = useState(null);
-    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const renderers = {
+        "link": (data) => (
+            <a href={data.url} target="_blank" rel="noopener noreferrer">
+                {data.content}
+            </a>
+        ),
+        "tooltip": (data) => (
+            <TooltipProvider>
+                <span
+                    data-tooltip-id={`tooltip-${data.content}`}
+                    data-tooltip-content={data.tooltipText}
+                >
+                    {data.content}
+                </span>
+                <Tooltip id={`tooltip-${data.content}`} />
+            </TooltipProvider>
+        ),
+        "modal": (data) => (
+            <CustomModal
+                triggerContent={<span className="modal-trigger">{data.content}</span>}
+                modalData={data.modalData}
+            />
+        ),
+        "link-tooltip": (data) => (
+            <>
+                <a
+                    href={data.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-tooltip-id={`tooltip-${data.content}`}
+                    data-tooltip-content={data.tooltipText}
+                    className="interactive-text"
+                >
+                    {data.content}
+                </a>
+                <Tooltip id={`tooltip-${data.content}`} />
+            </>
+        ),
+        default: (data) => <span>{data}</span>,
+    };
 
-    const openModal = useCallback((data) => {
-        setModalData(data);
-        setModalIsOpen(true);
-    }, []);
-
-    const closeModal = useCallback(() => {
-        setModalData(null);
-        setModalIsOpen(false);
-    }, []);
-
-    const renderCellContent = useCallback((cellData) => {
+    const renderCellContent = (cellData) => {
+        if (!cellData) return null;
+        // If cellData is an array, flatten it
         if (Array.isArray(cellData)) {
-            return cellData.map((item, index) => (
-                <React.Fragment key={index}>
-                    {renderCellContent(item)}
-                    {index < cellData.length - 1 && ", "}
-                </React.Fragment>
-            ));
-        }
-
-        if (!cellData || !cellData.type) {
-            return <span>{cellData?.content || cellData}</span>;
-        }
-
-        switch (cellData.type) {
-            case "link":
-                return (
-                    <a
-                        href={cellData.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        {cellData.content}
-                    </a>
-                );
-            case "tooltip":
-                return (
-                    <TooltipProvider>
-                        <span data-tooltip-id={`tooltip-${cellData.content}`} data-tooltip-content={cellData.tooltipText}>
-                            {cellData.content}
-                        </span>
-                        <Tooltip id={`tooltip-${cellData.content}`} />
-                    </TooltipProvider>
-                );
-            case "modal":
-                return (
-                    <span
-                        className="modal-trigger"
-                        onClick={() => openModal(cellData.modalData)}
-                    >
-                        {cellData.content}
-                    </span>
-                );
-            case "link-tooltip":
-                return (
-                    <>
-                        <a
-                            href={cellData.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            data-tooltip-id={`tooltip-${cellData.content}`}
-                            data-tooltip-content={cellData.tooltipText}
-                            className="interactive-text"
+            return (
+                <div>
+                    {cellData.map((item, index) => (
+                        <div
+                            key={index}
+                            style={{ marginBottom: index !== cellData.length - 1 ? "8px" : "0" }}
                         >
-                            {cellData.content}
-                        </a>
-                        <Tooltip id={`tooltip-${cellData.content}`} />
-                    </>
-                );
-            default:
-                return <span>{cellData.content}</span>;
+                            {renderCellContent(item)}
+                        </div> // Recursive flattening
+                    ))}
+                </div>
+            );
         }
-    }, [openModal]);
+    
+        // Handle plain strings or numbers
+        if (typeof cellData === "string" || typeof cellData === "number") {
+            return renderers.default(cellData); // Use default renderer for plain text
+        }
+    
+        // Handle objects with a 'content' property
+        if (typeof cellData === "object" && cellData.type) {
+            const renderer = renderers[cellData.type];
+            return renderer ? renderer(cellData) : renderers.default(cellData.content);
+        }
+    
+        // Fallback for unsupported data types
+        return null;
+    };
+    
 
     if (!data || !columns || data.length === 0) {
         return <p>No data available.</p>;
     }
 
     return (
-        <div className='table-container'>
+        <div className="table-container">
             <table className="table">
                 <thead>
                     <tr>
@@ -107,12 +105,6 @@ function Table({ columns, data }) {
                     ))}
                 </tbody>
             </table>
-
-            <CustomModal
-                isOpen={modalIsOpen}
-                modalData={modalData}
-                onClose={closeModal}
-            />
         </div>
     );
 }

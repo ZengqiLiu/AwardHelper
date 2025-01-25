@@ -13,15 +13,7 @@ function RouteTable({ programDetails }) {
         return <p>Loading...</p>;
     }
     // Wrap programDetails in an array to work with the Table
-    // const processedData = [programDetails];
-    const processedData = [
-        {
-            layover: programDetails.layover,
-            stopover: programDetails.stopover,
-            moreThanOnePartner: programDetails.moreThanOnePartner,
-            transferInThirdRegion: programDetails.transferInThirdRegion
-        }
-    ];
+    const processedData = [programDetails];
 
     return <Table columns={columns} data={processedData} />;
 }

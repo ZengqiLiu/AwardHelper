@@ -12,17 +12,7 @@ function AirlineTable({ programDetails }) {
     if (!programDetails) {
         return <p>Loading...</p>;
     }
-    // Wrap programDetails in an array to work with the Table
-    /*
-    const processedData = programDetails.airlines.map((airlines) => ({
-        airline: airlines.airline,
-        code: airlines.code,
-        alliance: airlines.alliance,
-        note: airlines.note
-    }));
-
-    return <Table columns={columns} data={processedData} />;
-    */
+    
     return <Table columns={columns} data={programDetails.airlines} />;
 }
 

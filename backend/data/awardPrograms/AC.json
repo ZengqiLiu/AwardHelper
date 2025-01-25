@@ -1,22 +1,98 @@
 {
-    "changeFee": ["100CAD"],
-    "cancellationFee": ["150CAD"],
+    "updatedDate": "2025-01-21",
+    "airlines": [
+        { "airline": "Aegean Airlines", "code": "A3", "alliance": "Star Alliance" },
+        { "airline": "Air China", "code": "CA", "alliance": "Star Alliance" },
+        { "airline": "Air India", "code": "AI", "alliance": "Star Alliance" },
+        { "airline": "Air New Zealand", "code": "NZ", "alliance": "Star Alliance" },
+        { "airline": "ANA", "code": "NH", "alliance": "Star Alliance" },
+        { "airline": "Asiana Airlines", "code": "OZ", "alliance": "Star Alliance" },
+        { "airline": "Austrian Airlines", "code": "OS", "alliance": "Star Alliance" },
+        { "airline": "Avianca", "code": "AV", "alliance": "Star Alliance" },
+        { "airline": "Brussels Airlines", "code": "SN", "alliance": "Star Alliance" },
+        { "airline": "Copa Airlines", "code": "CM", "alliance": "Star Alliance" },
+        { "airline": "Croatia Airlines", "code": "OU", "alliance": "Star Alliance" },
+        { "airline": "EgyptAir", "code": "MS", "alliance": "Star Alliance" },
+        { "airline": "Ethiopian Airlines", "code": "ET", "alliance": "Star Alliance" },
+        { "airline": "EVA Air", "code": "BR", "alliance": "Star Alliance" },
+        { "airline": "LOT Polish Airlines", "code": "LO", "alliance": "Star Alliance" },
+        { "airline": "Lufthansa", "code": "LH", "alliance": "Star Alliance" },
+        { "airline": "Shenzhen Airlines", "code": "ZH", "alliance": "Star Alliance" },
+        { "airline": "Singapore Airlines", "code": "SQ", "alliance": "Star Alliance" },
+        { "airline": "South African Airways", "code": "SA", "alliance": "Star Alliance" },
+        { "airline": "SWISS", "code": "LX", "alliance": "Star Alliance" },
+        { "airline": "TAP Air Portugal", "code": "TP", "alliance": "Star Alliance" },
+        { "airline": "THAI", "code": "TG", "alliance": "Star Alliance" },
+        { "airline": "Turkish Airlines", "code": "TK", "alliance": "Star Alliance" },
+        { "airline": "United Airlines", "code": "UA", "alliance": "Star Alliance" },
+        { "airline": "Air Creebec", "code": "YN", "alliance": "None" },
+        { "airline": "Air Dolomiti", "code": "EN", "alliance": "None" },
+        { "airline": "Air Mauritius", "code": "MK", "alliance": "None" },
+        { "airline": "Air Serbia", "code": "JU", "alliance": "None" },
+        { "airline": "Azul Brazilian Airlines", "code": "AD", "alliance": "None" },
+        { "airline": "Bamboo Airways", "code": "QH", "alliance": "None" },
+        { "airline": "Calm Air", "code": "MO", "alliance": "None" },
+        { "airline": "Canadian North", "code": "5T", "alliance": "None" },
+        { "airline": "Cathay Pacific", "code": "CX", "alliance": "Oneworld" },
+        { "airline": "Discover Airlines", "code": "4Y", "alliance": "None" },
+        { "airline": "Edelweiss Air", "code": "EW", "alliance": "None" },
+        { "airline": "Emirates", "code": "EK", "alliance": "None" },
+        { "airline": "Etihad Airways", "code": "EY", "alliance": "None" },
+        { "airline": "Eurowings", "code": "EW", "alliance": "None" },
+        { "airline": "FlyDubai", "code": "FZ", "alliance": "None" },
+        { "airline": "GOL", "code": "G3", "alliance": "None" },
+        { "airline": "Gulf Air", "code": "GF", "alliance": "None" },
+        { "airline": "Juneyao Airlines", "code": "HO", "alliance": "None" },
+        { "airline": "Olympic Air", "code": "OA", "alliance": "None" },
+        { "airline": "Oman Air", "code": "WY", "alliance": "None" },
+        { "airline": "PAL Airlines", "code": "PB", "alliance": "None" },
+        { "airline": "SunExpress", "code": "XQ", "alliance": "None" },
+        { "airline": "Virgin Australia", "code": "VA", "alliance": "None" },
+        { "airline": "Vistara", "code": "UK", "alliance": "None" }
+    ],
+    "changeFee": [
+        {
+            "type": "tooltip",
+            "content": "100CAD/0^",
+            "tooltipText": "Must change 2h before departure; For \"Standard\" and \"Lowest\" fares, 150CAD; Otherwise 0CAD."
+        }
+    ],
+    "cancellationFee": [
+        {
+            "type": "tooltip",
+            "content": "175CAD/150CAD/125CAD/75CAD/0^",
+            "tooltipText": "Must cancel 2h before departure; For \"Standard\" and \"Lowest\" fares, 150CAD when cancelling online and 175CAD when cancelling on the phone; For \"Economy Flex\" fares, 75CAD when cancelling online and 125CAD when cancelling on the phone; Otherwise 0CAD."
+        }
+
+    ],
     "phoneBookingFee": ["30CAD"],
     "partnerBookingFee": ["39CAD"],
     "yq": ["No"],
-    "layover": ["6,", "12h limited in US and Canada"],
-    "stopover": ["1 outside of US and Canada with 5,000"],
+    "layover": [
+        {
+            "type": "tooltip",
+            "content": "6^",
+            "tooltipText": "4h maximum in US and Canada"
+        }
+    ],
+    "stopover": [
+        {
+            "type": "tooltip",
+            "content": "1^",
+            "tooltipText": "Limited to 1 stopover per direction; Not allowed in Canada/US; additional 5,000 miles required."
+        }
+    ],
     "onlineBooking": [
-        "All airlines"
+        "Most"
     ],
     "phoneBooking": [
-        "-"
+        "OU, YN, MO, HO"
     ],
     "hold": ["No"],
-    "roundTrip": ["Not must,", "No discount"],
+    "roundTrip": ["Not must, no discount"],
     "moreThanOnePartner": ["Yes"],
     "mixedCabin": ["Yes, but priced with highest cabin"],
-    "transferInThirdRegion": ["Yes"],
+    "transferInThirdRegion": ["Yes, with a few exceptions"],
     "routes": [
         {
             "departureZone": "North America",

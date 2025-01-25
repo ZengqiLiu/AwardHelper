@@ -37,9 +37,11 @@
 .table tbody td {
     padding: 12px;
     text-align: center;
-    vertical-align: top;
+    vertical-align: middle;
     border: 1px solid #ddd; /* Border for table cells */
 }
+
+
 
 /* Data Cell Styles */
 .table td ul {
