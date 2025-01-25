@@ -99,7 +99,6 @@ function SearchByIssuingPage() {
                                         Updated on: {details?.updatedDate || "Not available"}
                                     </p>
                                 </div>
-                                
                                 <h3>Full Redeemable Airline List</h3>
                                 {code && programDetails[code] && (
                                     <AirlineTable programDetails={programDetails[code]} />
@@ -128,8 +127,6 @@ function SearchByIssuingPage() {
                                 {code && programDetails[code] && (
                                     <PartnerRedeemTable programDetails={programDetails[code]} />
                                 )}
-                                
-                                
                             </div>
                         );
                     })}
