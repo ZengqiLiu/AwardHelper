@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip, TooltipProvider } from 'react-tooltip';
+import { Tooltip } from 'react-tooltip';
 import CustomModal from './CustomModal';
 import './Table.css';
 
@@ -11,7 +11,7 @@ function Table({ columns, data }) {
             </a>
         ),
         "tooltip": (data) => (
-            <TooltipProvider>
+            <>
                 <span
                     data-tooltip-id={`tooltip-${data.content}`}
                     data-tooltip-content={data.tooltipText}
@@ -19,7 +19,7 @@ function Table({ columns, data }) {
                     {data.content}
                 </span>
                 <Tooltip id={`tooltip-${data.content}`} />
-            </TooltipProvider>
+            </>
         ),
         "modal": (data) => (
             <CustomModal
