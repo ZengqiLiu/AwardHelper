@@ -12,6 +12,7 @@ function SelfRedeemTable({ programDetails }) {
         { label: 'First', field: 'first' },
     ];
 
+
     const processedData = useMemo(() => {
         if (!programDetails || !programDetails.selfRoutes || programDetails.selfRoutes.length === 0) {
             return [];
@@ -27,6 +28,7 @@ function SelfRedeemTable({ programDetails }) {
             distance: selfRoute.distance || '-',
         }));
     }, [programDetails]);
+
 
     if (processedData.length === 0) {
         return <p>No information available.</p>;

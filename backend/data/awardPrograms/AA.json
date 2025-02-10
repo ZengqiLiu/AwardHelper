@@ -252,67 +252,7 @@
                     "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
                 }
             }
-        },     
-        {
-            "departureZone": "Mexico/Caribbean/Central America",
-            "landingZone": "South America - Short Haul",
-            "cost": {
-                "economy": "15,000*",
-                "premiumEconomy": {
-                    "type": "tooltip",
-                    "content": "-*",     
-                    "tooltipText":"For short-haul flights equipped with premium economy seats, they are marketed as \"Main Cabin Extra\" seats in the economy class."
-                },
-                "business": "30,000*",
-                "first": {
-                    "type": "tooltip",
-                    "content": "30,000*^",     
-                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
-                }
-            }
-        },  
-        {
-            "departureZone": "Mexico/Caribbean/Central America",
-            "landingZone": "Hawaii/Alaska",
-            "cost": {
-                "economy": "20,000*",
-                "premiumEconomy": "40,000*",
-                "business": "60,000*",
-                "first": {
-                    "type": "tooltip",
-                    "content": "60,000*^",     
-                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
-                }
-            }
-        },             
-        {
-            "departureZone": "Mexico/Caribbean/Central America",
-            "landingZone": "South America - Long Haul",
-            "cost": {
-                "economy": "30,000*",
-                "premiumEconomy": "60,000*",
-                "business": "90,000*",
-                "first": {
-                    "type": "tooltip",
-                    "content": "90,000*^",     
-                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
-                }
-            }
-        },
-        {
-            "departureZone": "South America - Short Haul",
-            "landingZone": "Hawaii/Alaska",
-            "cost": {
-                "economy": "20,000*",
-                "premiumEconomy": "40,000*",
-                "business": "60,000*",
-                "first": {
-                    "type": "tooltip",
-                    "content": "60,000*^",     
-                    "tooltipText":"For AA-operated flights with a first-class cabin, there is no published award price specifically for first class. However, it is typically priced higher than the business class award."
-                }
-            }
-        }                                    
+        }                              
     ],
     "partnerRoutes": [
         {
