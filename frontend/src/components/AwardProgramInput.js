@@ -17,7 +17,7 @@ const AwardProgramInput = forwardRef(({ onInputChange }, ref) => {
 
   // Fetch dropdown data from backend
   useEffect(() => {
-    fetch('http://localhost:5000/api/award-programs') // Backend endpoint
+    fetch(`http://localhost:5000/api/award-programs`) // Backend endpoint
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

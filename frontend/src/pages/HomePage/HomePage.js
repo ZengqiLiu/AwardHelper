@@ -42,6 +42,21 @@ function HomePage() {
 
       {/* Searching Method Section */}
       <section className="searching-method">
+        {/* Browse a specific airline program */}
+        <div className="block">
+          <div className="block-content">
+            <div className="text-content">
+              <h2>Browse an Airline Program</h2>
+              <p>Find a complete guidance to a specific airline program.</p>
+              <Button text={"Search"} onClick={handleSearch} />
+            </div>
+
+            <div className="input-content">
+              {/* Render inputs dynamically */}
+              <AwardProgramInput ref={awardProgramInputRef} />
+            </div>
+          </div>
+        </div>
         {/* Search By Issuing Airlines */}
         <div className="block">
           <div className="block-content">

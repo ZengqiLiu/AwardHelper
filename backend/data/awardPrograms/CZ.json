@@ -179,7 +179,11 @@
                 "first": "233,000"
             }   
         }
-    ],    
+    ],
+    "selfRedeemNotes": [
+        "3U and EU use the same standard as CZ",
+        "Some routes require special redemption rules^"
+    ],
     "partnerRoutes": [
         {
             "departureZone": {

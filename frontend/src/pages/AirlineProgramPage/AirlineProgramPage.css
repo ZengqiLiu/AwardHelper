@@ -1,0 +1,17 @@
+.block-container {
+    width: 100%;
+}
+
+.program-name-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.program-name {
+    text-align: left;
+}
+
+.update-date {
+    text-align: right;
+}
