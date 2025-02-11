@@ -4,6 +4,7 @@ import AirlineTable from './AirlineTable';
 import FeeTable from './FeeTable';
 import RouteTable from './RouteTable';
 import SelfRedeemTable from './SelfRedeemTable';
+import SelfRedeemNotes  from './SelfRedeemNotes';
 import PartnerRedeemTable from './PartnerRedeemTable';
 import TicketingTable from './TicketingTable';
 import './SearchByIssuingPage.css';
@@ -125,6 +126,8 @@ function SearchByIssuingPage() {
 
                     <h3>Redeem on Flights Operated by {code}</h3>
                     <SelfRedeemTable programDetails={details} />
+
+                    <SelfRedeemNotes programDetails={details} />
 
                     <h3>Redeem on Flights Operated by Partners</h3>
                     <PartnerRedeemTable programDetails={details} />
