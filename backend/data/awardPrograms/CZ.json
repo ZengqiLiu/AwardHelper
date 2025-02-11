@@ -184,17 +184,17 @@
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Zone A^",
+                "content": "Northeast Aisa^",
                 "modalData": {
-                    "title": "Zone A",
+                    "title": "Northeast Aisa (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
             "landingZone": {
                 "type": "modal",
-                "content": "Zone A^",
+                "content": "Northeast Aisa^",
                 "modalData": {
-                    "title": "Zone A",
+                    "title": "Northeast Aisa (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
@@ -202,6 +202,1849 @@
                 "economy": "30,000",
                 "business": "45,000",
                 "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Northeast Aisa^",
+                "modalData": {
+                    "title": "Northeast Aisa (Zone A)",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "cost": {
+                "economy": "35,000",
+                "business": "60,000",
+                "first": "75,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Northeast Aisa^",
+                "modalData": {
+                    "title": "Northeast Aisa (Zone A)",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "cost": {
+                "economy": "40,000",
+                "business": "75,000",
+                "first": "90,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Northeast Aisa^",
+                "modalData": {
+                    "title": "Northeast Aisa (Zone A)",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }
+            },
+            "cost": {
+                "economy": "45,000",
+                "business": "80,000",
+                "first": "203,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Northeast Aisa^",
+                "modalData": {
+                    "title": "Northeast Aisa (Zone A)",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }
+            },
+            "cost": {
+                "economy": "65,000",
+                "business": "120,000",
+                "first": "233,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Northeast Aisa^",
+                "modalData": {
+                    "title": "Northeast Aisa (Zone A)",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "cost": {
+                "economy": "60,000",
+                "business": "115,000",
+                "first": "145,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Northeast Aisa^",
+                "modalData": {
+                    "title": "Northeast Aisa (Zone A)",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "cost": {
+                "economy": "70,000",
+                "business": "135,000",
+                "first": "160,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Northeast Aisa^",
+                "modalData": {
+                    "title": "Northeast Aisa (Zone A)",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "cost": {
+                "economy": "85,000",
+                "business": "170,000",
+                "first": "210,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Northeast Aisa^",
+                "modalData": {
+                    "title": "Northeast Aisa (Zone A)",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "cost": {
+                "economy": "60,000",
+                "business": "100,000",
+                "first": "203,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Northeast Aisa^",
+                "modalData": {
+                    "title": "Northeast Aisa (Zone A)",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "cost": {
+                "economy": "50,000",
+                "business": "90,000",
+                "first": "130,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Northeast Aisa^",
+                "modalData": {
+                    "title": "Northeast Aisa (Zone A)",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "cost": {
+                "economy": "50,000",
+                "business": "95,000",
+                "first": "145,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Northeast Aisa^",
+                "modalData": {
+                    "title": "Northeast Aisa (Zone A)",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "cost": {
+                "economy": "60,000",
+                "business": "115,000",
+                "first": "155,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "cost": {
+                "economy": "25,000",
+                "business": "40,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "cost": {
+                "economy": "40,000",
+                "business": "75,000",
+                "first": "90,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }
+            },
+            "cost": {
+                "economy": "45,000",
+                "business": "85,000",
+                "first": "115,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }
+            },
+            "cost": {
+                "economy": "60,000",
+                "business": "120,000",
+                "first": "160,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "cost": {
+                "economy": "65,000",
+                "business": "120,000",
+                "first": "165,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "cost": {
+                "economy": "75,000",
+                "business": "135,000",
+                "first": "170,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "cost": {
+                "economy": "90,000",
+                "business": "160,000",
+                "first": "205,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "cost": {
+                "economy": "55,000",
+                "business": "105,000",
+                "first": "145,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "cost": {
+                "economy": "50,000",
+                "business": "100,000",
+                "first": "130,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "cost": {
+                "economy": "50,000",
+                "business": "100,000",
+                "first": "130,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southeast Asia^",
+                "modalData": {
+                    "title": "Southeast Asia (Zone B)",
+                    "body": "Hong Kong, Macau, Brunei, Cambodia, Guam, Indonesia, Laos, Malaysia, Myanmar (Burma), Philippines, Saipan, Singapore, Thailand, Vietnam"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "cost": {
+                "economy": "55,000",
+                "business": "105,000",
+                "first": "150,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "cost": {
+                "economy": "25,000",
+                "business": "40,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }
+            },
+            "cost": {
+                "economy": "60,000",
+                "business": "120,000",
+                "first": "150,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }
+            },
+            "cost": {
+                "economy": "65,000",
+                "business": "120,000",
+                "first": "160,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "cost": {
+                "economy": "70,000",
+                "business": "125,000",
+                "first": "170,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "cost": {
+                "economy": "85,000",
+                "business": "165,000",
+                "first": "215,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "cost": {
+                "economy": "90,000",
+                "business": "180,000",
+                "first": "220,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "cost": {
+                "economy": "50,000",
+                "business": "90,000",
+                "first": "120,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "cost": {
+                "economy": "40,000",
+                "business": "70,000",
+                "first": "90,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "cost": {
+                "economy": "40,000",
+                "business": "70,000",
+                "first": "90,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Southwest Asia^",
+                "modalData": {
+                    "title": "Southwest Asia (Zone C)",
+                    "body": "Afghanistan, Bangladesh, Bhutan, India, Kazakhstan, Kyrgyzstan, Nepal, Pakistan, Sri Lanka, Tajikistan, Turkmenistan, Uzbekistan"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "cost": {
+                "economy": "45,000",
+                "business": "80,000",
+                "first": "100,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }
+            },
+            "cost": {
+                "economy": "25,000",
+                "business": "40,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }
+            },
+            "cost": {
+                "economy": "70,000",
+                "business": "140,000",
+                "first": "190,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "cost": {
+                "economy": "80,000",
+                "business": "150,000",
+                "first": "200,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "cost": {
+                "economy": "75,000",
+                "business": "140,000",
+                "first": "190,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "cost": {
+                "economy": "65,000",
+                "business": "120,000",
+                "first": "160,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "cost": {
+                "economy": "80,000",
+                "business": "150,000",
+                "first": "205,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }                
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "cost": {
+                "economy": "75,000",
+                "business": "130,000",
+                "first": "160,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "cost": {
+                "economy": "75,000",
+                "business": "130,000",
+                "first": "160,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "South Pacific^",
+                "modalData": {
+                    "title": "South Pacific (Zone D)",
+                    "body": "Australia, New Zealand, American Samoa, Fiji, French Polynesia, Western Samoa, Kiribati, Tonga, Marshall Islands, Micronesia, Nauru, New Caledonia, Palau, Papua New Guinea, Solomon Islands, Tuvalu, Vanuatu"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "cost": {
+                "economy": "65,000",
+                "business": "125,000",
+                "first": "150,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }
+            },
+            "cost": {
+                "economy": "25,000",
+                "business": "40,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "cost": {
+                "economy": "30,000",
+                "business": "40,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "cost": {
+                "economy": "40,000",
+                "business": "75,000",
+                "first": "90,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "cost": {
+                "economy": "50,000",
+                "business": "100,000",
+                "first": "140,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "cost": {
+                "economy": "45,000",
+                "business": "80,000",
+                "first": "140,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }     
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "cost": {
+                "economy": "60,000",
+                "business": "115,000",
+                "first": "155,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "cost": {
+                "economy": "60,000",
+                "business": "115,000",
+                "first": "155,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "USA/Canada^",
+                "modalData": {
+                    "title": "USA/Canada (Zone E)",
+                    "body": "USA (excluding Hawaii), Canada"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "cost": {
+                "economy": "65,000",
+                "business": "120,000",
+                "first": "155,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "cost": {
+                "economy": "25,000",
+                "business": "40,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "cost": {
+                "economy": "30,000",
+                "business": "50,000",
+                "first": "70,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "cost": {
+                "economy": "40,000",
+                "business": "80,000",
+                "first": "120,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "cost": {
+                "economy": "50,000",
+                "business": "95,000",
+                "first": "130,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "cost": {
+                "economy": "55,000",
+                "business": "110,000",
+                "first": "140,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "cost": {
+                "economy": "55,000",
+                "business": "110,000",
+                "first": "140,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Mexico/Hawaii/Central America^",
+                "modalData": {
+                    "title": "Mexico/Hawaii/Central America (Zone F)",
+                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "cost": {
+                "economy": "80,000",
+                "business": "150,000",
+                "first": "190,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "cost": {
+                "economy": "25,000",
+                "business": "40,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "cost": {
+                "economy": "30,000",
+                "business": "55,000",
+                "first": "70,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "cost": {
+                "economy": "50,000",
+                "business": "100,000",
+                "first": "130,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "cost": {
+                "economy": "55,000",
+                "business": "100,000",
+                "first": "130,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "cost": {
+                "economy": "60,000",
+                "business": "110,000",
+                "first": "140,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Latin America 1^",
+                "modalData": {
+                    "title": "Latin America 1 (Zone G)",
+                    "body": "Colombia, Ecuador, French Guiana, Guyana, Panama, Peru, Suriname, Venezuela"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "cost": {
+                "economy": "65,000",
+                "business": "120,000",
+                "first": "160,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "cost": {
+                "economy": "25,000",
+                "business": "40,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "cost": {
+                "economy": "55,000",
+                "business": "110,000",
+                "first": "145,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "cost": {
+                "economy": "70,000",
+                "business": "125,000",
+                "first": "170,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "cost": {
+                "economy": "70,000",
+                "business": "125,000",
+                "first": "170,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Latin America 2^",
+                "modalData": {
+                    "title": "Latin America 2 (Zone H)",
+                    "body": "Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "cost": {
+                "economy": "55,000",
+                "business": "100,000",
+                "first": "140,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "cost": {
+                "economy": "25,000",
+                "business": "40,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "cost": {
+                "economy": "35,000",
+                "business": "55,000",
+                "first": "80,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "cost": {
+                "economy": "35,000",
+                "business": "55,000",
+                "first": "80,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Europe^",
+                "modalData": {
+                    "title": "Europe (Zone I)",
+                    "body": "France, Germany, United Kingdom, Netherlands, Italy, Czech Republic, Albania, Andorra, Armenia, Austria, Belarus, Belgium, Bosnia, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, Gibraltar, Greece, Hungary, Iceland, Ireland, Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Moldova, Monaco, Norway, Poland, Portugal, Romania, San Marino, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, Ukraine, Western Russia, Yugoslavia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "cost": {
+                "economy": "55,000",
+                "business": "100,000",
+                "first": "145,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "cost": {
+                "economy": "30,000",
+                "business": "45,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "cost": {
+                "economy": "30,000",
+                "business": "45,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "North Africa^",
+                "modalData": {
+                    "title": "North Africa (Zone J)",
+                    "body": "Algeria, Morocco, Tunisia, Libya"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "cost": {
+                "economy": "45,000",
+                "business": "75,000",
+                "first": "90,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "cost": {
+                "economy": "30,000",
+                "business": "45,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Middle East/Near East^",
+                "modalData": {
+                    "title": "Middle East/Near East (Zone K)",
+                    "body": "Bahrain, Egypt, Iran, Iraq, Jordan, Kuwait, Lebanon, Qatar, Saudi Arabia, Sudan, Oman, Syria, United Arab Emirates, Yemen"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "cost": {
+                "economy": "40,000",
+                "business": "80,000",
+                "first": "100,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Central & South Africa/Indian Ocean^",
+                "modalData": {
+                    "title": "Central & South Africa/Indian Ocean (Zone L)",
+                    "body": "Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire, Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Kenya, Lesotho, Liberia, Madagascar, Malawi, Maldives, Mali, Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Seychelles, Somalia, South Africa, Eswatini, Tanzania, Togo, Uganda, Zaire, Zambia, Zimbabwe"
+                }
+            },
+            "cost": {
+                "economy": "30,000",
+                "business": "45,000",
+                "first": "60,000"
+            }
+        },
+        {
+            "departureZone": "China",
+            "landingZone": "China",
+            "distance": "1-800km",
+            "cost": {
+                "economy": "10,000",
+                "business": "20,000",
+                "first": "25,000"
+            }   
+        },
+        {
+            "departureZone": "China",
+            "landingZone": "China",
+            "distance": "801-1700km",
+            "cost": {
+                "economy": "15,000",
+                "business": "30,000",
+                "first": "38,000"
+            }   
+        },
+        {
+            "departureZone": "China",
+            "landingZone": "China",
+            "distance": "1701-3000km",
+            "cost": {
+                "economy": "20,000",
+                "business": "40,000",
+                "first": "50,000"
+            }   
+        },
+        {
+            "departureZone": "China",
+            "landingZone": "China",
+            "distance": "3001-5000km",
+            "cost": {
+                "economy": "28,000",
+                "business": "56,000",
+                "first": "65,000"
+            }   
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Selected Countries Domestic^",
+                "modalData": {
+                    "title": "Selected Countries Domestic",
+                    "body": "USA (USA 49 states, not include Hawaii), Russia, Canada, Brazil, Australia, India, Argentina, Kazakhstan, Sudan, Algeria, Congo, Mexico, Saudi Arabia, Indonesia, Malaysia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Selected Countries Domestic^",
+                "modalData": {
+                    "title": "Selected Countries Domestic",
+                    "body": "USA (USA 49 states, not include Hawaii), Russia, Canada, Brazil, Australia, India, Argentina, Kazakhstan, Sudan, Algeria, Congo, Mexico, Saudi Arabia, Indonesia, Malaysia"
+                }
+            },
+            "cost": {
+                "economy": "20,000",
+                "business": "40,000",
+                "first": "50,000"
+            }
+        },
+        {
+            "departureZone": "Taiwan/Other Countaries Domestic",
+            "landingZone": "Taiwan/Other Countaries Domestic",
+            "cost": {
+                "economy": "15,000",
+                "business": "30,000",
+                "first": "38,000"
             }
         }
     ]
