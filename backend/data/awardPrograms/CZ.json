@@ -181,6 +181,28 @@
         }
     ],    
     "partnerRoutes": [
-
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Zone A^",
+                "modalData": {
+                    "title": "Zone A",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": {
+                "type": "modal",
+                "content": "Zone A^",
+                "modalData": {
+                    "title": "Zone A",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "cost": {
+                "economy": "30,000",
+                "business": "45,000",
+                "first": "60,000"
+            }
+        }
     ]
 }

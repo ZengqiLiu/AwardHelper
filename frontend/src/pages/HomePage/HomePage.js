@@ -20,7 +20,7 @@ function HomePage() {
     console.log("Selected Programs:", selectedPrograms);
   
     // Navigate to the next page with selected programs
-    navigate('/SearchByIssuing', { state: { programs: selectedPrograms } });
+    navigate(`/SearchByIssuing`, { state: { programs: selectedPrograms } });
   };
   
   

@@ -34,10 +34,8 @@ const CustomModal = ({ triggerContent, modalData }) => {
             <Modal
                 isOpen={isOpen}
                 onRequestClose={closeModal}
-                style={{
-                    overlay: { zIndex: 1000, backgroundColor: "rgba(0, 0, 0, 0.5)" },
-                    content: { maxWidth: "30%", margin: "auto", padding: "20px" },
-                }}
+                    className="custom-modal"
+                    overlayClassName="custom-modal-overlay"
             >
                 {modalData?.title && <h2>{modalData.title}</h2>}
                 {modalData?.body && <p>{modalData.body}</p>}
