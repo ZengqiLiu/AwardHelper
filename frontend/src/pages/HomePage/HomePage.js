@@ -4,6 +4,12 @@ import Button from '../../components/Button';
 import AwardProgramInput from '../../components/AwardProgramInput';
 import './HomePage.css';
 
+// Helper function to extract the two-letter code
+function extractCode(item) {
+  const match = item.match(/\((\w{2})\)/);
+  return match ? match[1] : null;
+}
+
 function HomePage() {
   const awardProgramInputRef = useRef(); // Ref for AwardProgramInput
   const navigate = useNavigate();
@@ -20,7 +26,7 @@ function HomePage() {
     console.log("Selected Programs:", selectedPrograms);
   
     // Navigate to the next page with selected programs
-    navigate(`/SearchByIssuing`, { state: { programs: selectedPrograms } });
+    navigate(`/SearchByIssuing?program=${Object.values(selectedPrograms).map(program => extractCode(program)).join('&')}`, { state: { programs: selectedPrograms } });
   };
   
   
@@ -64,12 +70,12 @@ function HomePage() {
               <h2>Search By Issuing Airlines</h2>
               <p>Which airline/bank/hotel award miles do you have?*</p>
               <p className="remark">*Currently <b>one</b> selected <b>airline</b> programs only.</p>
-              <Button text={"Search"} onClick={handleSearch} />
+              {/* <Button text={"Search"} onClick={handleSearch} /> */}
             </div>
 
             <div className="input-content">
               {/* Render inputs dynamically */}
-              <AwardProgramInput ref={awardProgramInputRef} />
+              {/* <AwardProgramInput ref={awardProgramInputRef} /> */}
             </div>
           </div>
         </div>
