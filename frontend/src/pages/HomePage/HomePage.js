@@ -26,7 +26,7 @@ function HomePage() {
     console.log("Selected Programs:", selectedPrograms);
   
     // Navigate to the next page with selected programs
-    navigate(`/SearchByIssuing?program=${Object.values(selectedPrograms).map(program => extractCode(program)).join('&')}`, { state: { programs: selectedPrograms } });
+    navigate(`/ProgramDetails?program=${Object.values(selectedPrograms).map(program => extractCode(program)).join('&')}`, { state: { programs: selectedPrograms } });
   };
   
   

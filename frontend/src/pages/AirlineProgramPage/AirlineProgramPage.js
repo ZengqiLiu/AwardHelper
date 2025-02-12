@@ -84,9 +84,9 @@ function AirlineProgramPage() {
   return (
     <div className="search-by-issuing-page">
       <section className="intro">
-        <h1>Search by Issuing Airlines</h1>
+        <h1>Browse an Airline Program</h1>
         <p>
-          Explore detailed information for the programs you selected, including cost, change and cancel, 
+          Explore detailed information for the program you selected, including cost, change and cancel, 
           layover and stopover, expiration, etc.
         </p>
         <div className="intro-with-background">
