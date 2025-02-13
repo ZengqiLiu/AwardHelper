@@ -47,10 +47,10 @@
     "layover": ["No"],
     "stopover": ["No"],
     "onlineBooking": [
-        "Most"
+        "All"
     ],
     "phoneBooking": [
-        "CZ"
+        "-"
     ],
     "hold": ["No"],
     "roundTrip": ["Not must, no discount"],

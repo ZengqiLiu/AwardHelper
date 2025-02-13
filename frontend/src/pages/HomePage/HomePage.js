@@ -40,7 +40,6 @@ function HomePage() {
         <div className="intro-with-background">
           <p><b>Still exploring options?</b> Review the details of various award programs, including points requirements, change and cancellation fees, layover and stopover policies, and more.</p>
           <p><b>Already planned your travel?</b> Simply enter your itinerary, and this tool will help you get the best value from your points and money.</p>
-          <p className="remark">*Feature coming soon.</p>
           <p><b>Have a preferred airline?</b> Find the most affordable way to get onboard!</p>
           <p className="remark">*Feature coming soon.</p>
         </div>
@@ -67,15 +66,16 @@ function HomePage() {
         <div className="block">
           <div className="block-content">
             <div className="text-content">
-              <h2>Search By Issuing Airlines</h2>
-              <p>Which airline/bank/hotel award miles do you have?*</p>
-              <p className="remark">*Currently <b>one</b> selected <b>airline</b> programs only.</p>
-              {/* <Button text={"Search"} onClick={handleSearch} /> */}
+              <h2>Search By Routes</h2>
+              <p>See your choices based on your origin and destiation.</p>
+              <Button text={"Search"} onClick={() => navigate("/SearchByRoutes")} />
             </div>
 
             <div className="input-content">
-              {/* Render inputs dynamically */}
-              {/* <AwardProgramInput ref={awardProgramInputRef} /> */}
+              <label htmlFor="from">From:</label>
+              <input type="text" id="from" name="from" />
+              <label htmlFor="to">To:</label>
+              <input type="text" id="to" name="to" />
             </div>
           </div>
         </div>
