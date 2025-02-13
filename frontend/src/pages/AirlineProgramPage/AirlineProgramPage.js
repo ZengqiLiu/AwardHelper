@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import AirlineTable from './AirlineTable';
 import FeeTable from './FeeTable';
 import RouteTable from './RouteTable';
@@ -12,19 +12,36 @@ import './AirlineProgramPage.css';
 // Helper function to extract the two-letter code
 function extractCode(item) {
   const match = item.match(/\((\w{2})\)/);
-  return match ? match[1] : null;
+  if (match) {
+    return match[1].toUpperCase();
+  }
+  // If the input is exactly two letters (case-insensitive), return them in uppercase.
+  if (item && item.length === 2 && /^[a-zA-Z0-9]{2}$/.test(item)) {
+    return item.toUpperCase();
+  }
+  return null;
 }
 
 function AirlineProgramPage() {
   const location = useLocation();
-  const { programs } = location.state || { programs: [] };
+  const [searchParams] = useSearchParams();
 
-  // Create a stable programList from the provided programs.
-  const programList = useMemo(
-    () => (Array.isArray(programs) ? programs : Object.values(programs || {})),
-    [programs]
-  );
+  const statePrograms = location.state?.programs;
 
+  // Memoize programList to prevent it from being re-created on every render.
+  const programList = useMemo(() => {
+    if (statePrograms && Object.keys(statePrograms).length > 0) {
+      return Array.isArray(statePrograms)
+        ? statePrograms
+        : Object.values(statePrograms);
+    } else {
+      // Read all the "program" query parameters. For example: /ProgramDetails?program=AA&program=CZ
+      return searchParams.getAll('program');
+    }
+  }, [statePrograms, searchParams]);
+
+
+  // Read all the "program" query parameters. For example, the URL may look like: /ProgramDetails?program=AA&program=CZ
   const [programDetails, setProgramDetails] = useState({});
 
   // Refs to track fetched codes and prevent overlapping fetch calls.
@@ -37,7 +54,7 @@ function AirlineProgramPage() {
 
     // Determine which codes need to be fetched.
     const codesToFetch = programList
-      .map(extractCode)
+      .map(program => extractCode(program))
       .filter((code) => code && !fetchedCodesRef.current.has(code));
 
     if (codesToFetch.length === 0) {
