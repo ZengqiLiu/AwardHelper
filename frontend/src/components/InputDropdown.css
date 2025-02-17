@@ -1,0 +1,89 @@
+/* Overall wrapper for the component */
+.input-dropdown-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Flex container for label and input */
+  .label-input-dropdown-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Fixed label column; adjust width as needed */
+  .label-input-dropdown-container label {
+    flex: 0 0 120px;
+    margin: 0;
+    /* Push the label up by reserving space under it (equal to the error height) */
+    padding-bottom: 1.2em;
+  }
+  
+  /* Input fills the remaining space */
+  .label-input-dropdown-container input {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .label-input-dropdown-container input:focus {
+    border-color: #00bcd4;
+  }
+  
+/* Dropdown List positioned relative to the input (aligned with the input column) */
+.dropdown-list {
+    display: none; /* Shown when needed via inline style */
+    position: absolute;
+    top: 100%;
+    left: 0px; /* Start at the end of the label column */
+    right: 0;    /* Stretch to the container's right edge */
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    z-index: 1;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+  
+  /* Dropdown Group Styles */
+  .dropdown-group .group-name {
+    font-weight: bold;
+    padding: 8px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  .dropdown-group .group-item {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .dropdown-group .group-item:hover {
+    background-color: #e2e2e2;
+  }
+  
+  /* Validation Error: absolutely positioned so it does not affect the input’s vertical alignment */
+  .validation-error {
+    position: absolute;
+    bottom: -1.2em; /* Reserve space equal to its height */
+    left: 0;   /* Align with the input’s left edge */
+    color: red;
+    font-size: 12px;
+    white-space: nowrap;
+    visibility: hidden; /* Initially hidden */
+    height: 1em;
+    line-height: 1.2em;
+    margin-top: 5px;
+  }
+  
+  /* Make error visible when invalid */
+  .validation-error.visible {
+    visibility: visible;
+  }
+  

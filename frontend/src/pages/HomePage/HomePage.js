@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
-import AwardProgramInput from '../../components/AwardProgramInput';
+import AwardProgramInput from './AwardProgramInput';
 import './HomePage.css';
 
 // Helper function to extract the two-letter code

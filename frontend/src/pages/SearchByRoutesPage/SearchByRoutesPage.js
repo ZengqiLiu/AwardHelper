@@ -1,12 +1,12 @@
 import React from 'react';
 import './SearchByRoutesPage.css';
 
-function SearchByRoutePage() {
+function SearchByRoutesPage() {
 
   return (
     <div className="search-by-route-page">
       <section className="intro">
-        <h1>Search by Route</h1>
+        <h1>Search by Routes</h1>
         <p>
           See possible solutions between your origin and destination. Select from the programs you have points in, and compare them to make the best value!
         </p>
@@ -29,4 +29,4 @@ function SearchByRoutePage() {
   );
 }
 
-export default SearchByRoutePage;
+export default SearchByRoutesPage;
