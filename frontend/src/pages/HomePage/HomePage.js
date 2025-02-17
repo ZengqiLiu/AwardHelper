@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import AwardProgramInput from './AwardProgramInput';
 import './HomePage.css';
+import RoutesInput from './RoutesInput';
 
 // Helper function to extract the two-letter code
 function extractCode(item) {
@@ -72,10 +73,7 @@ function HomePage() {
             </div>
 
             <div className="input-content">
-              <label htmlFor="from">From:</label>
-              <input type="text" id="from" name="from" />
-              <label htmlFor="to">To:</label>
-              <input type="text" id="to" name="to" />
+              <RoutesInput />
             </div>
           </div>
         </div>
