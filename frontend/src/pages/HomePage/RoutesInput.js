@@ -1,11 +1,29 @@
-import React, { forwardRef, useImperativeHandle, useRef } from "react";
+import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import InputDropdown from "../../components/InputDropdown";
 import "./RoutesInput.css";
 
-const RoutesInput = forwardRef((props, ref) => {
-  // Create refs for the "From" and "To" dropdowns.
-  const fromRef = useRef();
-  const toRef = useRef();
+const RoutesInput = forwardRef(({ onInputchange }, ref) => {
+  const [dropdownData, setDropdownData] = useState([]);
+  const [error, setError] = useState(null);
+  const [originCount, setOriginCount] = useState(1);
+  const [destinationCount, setDestinationCount] = useState(1);
+  const originDropdownRefs = useRef({});
+  const destinationDropdownRefs = useRef({});
+  const maxOrigins = 1;
+  const maxDestinations = 1;
+
+  // Fetch dropdown data from backend API point
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/award-programs`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => setDropdownData(data))
+      .catch((error) => setError(error.message));
+  }, []);
 
   // Expose methods via ref so parent components can trigger validation and get values.
   useImperativeHandle(ref, () => ({
