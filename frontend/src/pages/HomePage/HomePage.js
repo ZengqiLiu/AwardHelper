@@ -6,16 +6,22 @@ import './HomePage.css';
 import RoutesInput from './RoutesInput';
 
 // Helper function to extract the two-letter code
-function extractCode(item) {
+function extractProgramCode(item) {
   const match = item.match(/\((\w{2})\)/);
+  return match ? match[1] : null;
+}
+
+function extractIataCode(item) {
+  const match = item.match(/\((\w{3})\)/);
   return match ? match[1] : null;
 }
 
 function HomePage() {
   const awardProgramInputRef = useRef(); // Ref for AwardProgramInput
+  const routeInputRef = useRef();
   const navigate = useNavigate();
   
-  const handleSearch = () => {
+  const handleProgramSearch = () => {
     const allInputsValid = awardProgramInputRef.current.triggerValidation();
   
     if (!allInputsValid) {
@@ -27,10 +33,24 @@ function HomePage() {
     console.log("Selected Programs:", selectedPrograms);
   
     // Navigate to the next page with selected programs
-    navigate(`/ProgramDetails?program=${Object.values(selectedPrograms).map(program => extractCode(program)).join('&')}`, { state: { programs: selectedPrograms } });
+    navigate(`/ProgramDetails?program=${Object.values(selectedPrograms).map(program => extractProgramCode(program)).join('&')}`, { state: { programs: selectedPrograms } });
   };
   
+  const handleRouteSearch = () => {
+    const allInputsValid = routeInputRef.current.triggerValidation();
   
+    if (!allInputsValid) {
+      console.log("Validation failed: Please correct the inputs.");
+      return;
+    }
+  
+    const { from, to } = routeInputRef.current.getInputValues();
+    console.log("Selected Origin:", from);
+    console.log("Selected Destination:", to);
+
+    // Navigate to the next page with selected routes
+    navigate(`/SearchByRoutes?from=${extractIataCode(from)}&to=${extractIataCode(to)}`, { state: { origin: from, destination: to } });
+  };
 
   return (
     <div className="homepage">
@@ -54,7 +74,7 @@ function HomePage() {
             <div className="text-content">
               <h2>Browse an Airline Program</h2>
               <p>Find a complete guidance to a specific airline program.</p>
-              <Button text={"Search"} onClick={handleSearch} />
+              <Button text={"Search"} onClick={handleProgramSearch} />
             </div>
 
             <div className="input-content">
@@ -69,11 +89,11 @@ function HomePage() {
             <div className="text-content">
               <h2>Search By Routes</h2>
               <p>See your choices based on your origin and destiation.</p>
-              <Button text={"Search"} onClick={() => navigate("/SearchByRoutes")} />
+              <Button text={"Search"} onClick={handleRouteSearch} />
             </div>
 
             <div className="input-content">
-              <RoutesInput />
+              <RoutesInput ref={routeInputRef} />
             </div>
           </div>
         </div>

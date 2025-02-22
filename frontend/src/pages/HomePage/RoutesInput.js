@@ -13,6 +13,14 @@ const RoutesInput = forwardRef(({ onInputChange }, ref) => {
 
   // Handler for the "From" input field.
   const handleFromInputChange = (value) => {
+    // If the current value exactly matches one of the available options, do nothing.
+    if (fromOptions.length > 0 && fromOptions[0].items.includes(value)) {
+      if (onInputChange) {
+        onInputChange(0, value);
+      }
+      return;
+    }
+
     // If the input has exactly 3 characters, convert to uppercase and fetch airport info.
     if (value.length === 3) {
       const code = value.toUpperCase();
@@ -45,6 +53,13 @@ const RoutesInput = forwardRef(({ onInputChange }, ref) => {
 
   // Handler for the "To" input field.
   const handleToInputChange = (value) => {
+    if (toOptions.length > 0 && toOptions[0].items.includes(value)) {
+      if (onInputChange) {
+        onInputChange(1, value);
+      }
+      return;
+    }
+    
     if (value.length === 3) {
       const code = value.toUpperCase();
       fetch(`http://localhost:5000/api/search-airport?iata_code=${code}`)
