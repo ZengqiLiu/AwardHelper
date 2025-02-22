@@ -1,40 +1,96 @@
-import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
+import React, { useState, useRef, forwardRef, useImperativeHandle } from "react";
 import InputDropdown from "../../components/InputDropdown";
 import "./RoutesInput.css";
 
-const RoutesInput = forwardRef(({ onInputchange }, ref) => {
-  const [dropdownData, setDropdownData] = useState([]);
-  const [error, setError] = useState(null);
-  const [originCount, setOriginCount] = useState(1);
-  const [destinationCount, setDestinationCount] = useState(1);
-  const originDropdownRefs = useRef({});
-  const destinationDropdownRefs = useRef({});
-  const maxOrigins = 1;
-  const maxDestinations = 1;
+const RoutesInput = forwardRef(({ onInputChange }, ref) => {
+  // State to store dropdown options for the "From" and "To" fields.
+  const [fromOptions, setFromOptions] = useState([]);
+  const [toOptions, setToOptions] = useState([]);
 
-  // Fetch dropdown data from backend API point
-  useEffect(() => {
-    fetch(`http://localhost:5000/api/award-programs`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((data) => setDropdownData(data))
-      .catch((error) => setError(error.message));
-  }, []);
+  // Create refs to access the InputDropdown components.
+  const fromRef = useRef(null);
+  const toRef = useRef(null);
 
-  // Expose methods via ref so parent components can trigger validation and get values.
+  // Handler for the "From" input field.
+  const handleFromInputChange = (value) => {
+    // If the input has exactly 3 characters, convert to uppercase and fetch airport info.
+    if (value.length === 3) {
+      const code = value.toUpperCase();
+      fetch(`http://localhost:5000/api/search-airport?iata_code=${code}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Airport not found");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // If the API returns data, create a dropdown option in the desired format.
+          const option = `${data.name} (${data.iata_code})`;
+          setFromOptions([{ group: "Matching Airport", items: [option] }]);
+        })
+        .catch((err) => {
+          // On error (or if no airport found), clear the options.
+          setFromOptions([]);
+        });
+    } else {
+      // For any input length other than 3, clear the options.
+      setFromOptions([]);
+    }
+
+    // Optionally, bubble up the change to a parent component.
+    if (onInputChange) {
+      onInputChange(0, value);
+    }
+  };
+
+  // Handler for the "To" input field.
+  const handleToInputChange = (value) => {
+    if (value.length === 3) {
+      const code = value.toUpperCase();
+      fetch(`http://localhost:5000/api/search-airport?iata_code=${code}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Airport not found");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const option = `${data.name} (${data.iata_code})`;
+          setToOptions([{ group: "Matching Airport", items: [option] }]);
+        })
+        .catch((err) => {
+          setToOptions([]);
+        });
+    } else {
+      setToOptions([]);
+    }
+    if (onInputChange) {
+      onInputChange(1, value);
+    }
+  };
+
+  // Expose methods to the parent component using the forwarded ref.
   useImperativeHandle(ref, () => ({
     triggerValidation: () => {
-      const validFrom = fromRef.current.triggerValidation();
-      const validTo = toRef.current.triggerValidation();
+      const validFrom =
+        fromRef.current && typeof fromRef.current.triggerValidation === "function"
+          ? fromRef.current.triggerValidation()
+          : false;
+      const validTo =
+        toRef.current && typeof toRef.current.triggerValidation === "function"
+          ? toRef.current.triggerValidation()
+          : false;
       return validFrom && validTo;
     },
     getInputValues: () => ({
-      from: fromRef.current.getValue(),
-      to: toRef.current.getValue(),
+      from:
+        fromRef.current && typeof fromRef.current.getValue === "function"
+          ? fromRef.current.getValue()
+          : "",
+      to:
+        toRef.current && typeof toRef.current.getValue === "function"
+          ? toRef.current.getValue()
+          : "",
     }),
   }));
 
@@ -45,7 +101,9 @@ const RoutesInput = forwardRef(({ onInputchange }, ref) => {
         <InputDropdown
           ref={fromRef}
           placeholder="Input IATA code of origin"
-          options={props.options}
+          options={fromOptions}
+          onInputChange={handleFromInputChange}
+          onValidationChange={() => {}}
         />
       </div>
       <div className="route-input">
@@ -53,7 +111,9 @@ const RoutesInput = forwardRef(({ onInputchange }, ref) => {
         <InputDropdown
           ref={toRef}
           placeholder="Input IATA code of destination"
-          options={props.options}
+          options={toOptions}
+          onInputChange={handleToInputChange}
+          onValidationChange={() => {}}
         />
       </div>
     </div>
