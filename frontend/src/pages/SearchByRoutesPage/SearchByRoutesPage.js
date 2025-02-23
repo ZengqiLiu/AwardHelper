@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './SearchByRoutesPage.css';
+import AirportTable from './AirportTable';
 
 function SearchByRoutesPage() {
   const location = useLocation();
@@ -25,8 +26,11 @@ function SearchByRoutesPage() {
         <div className="block-container">
           <div className="block">
             <div className="route-container">
-              <h2 className="route">From {origin} to {destination}</h2>
-              <p>distance:</p>
+              <h2>Route Information</h2>
+              <h3>Origin</h3>
+              <AirportTable />
+              <h3>Destination</h3>
+              <AirportTable />
             </div>
           </div>
         </div>
