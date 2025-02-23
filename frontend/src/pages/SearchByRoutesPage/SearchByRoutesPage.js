@@ -1,7 +1,10 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './SearchByRoutesPage.css';
 
 function SearchByRoutesPage() {
+  const location = useLocation();
+  const { origin, destination } = location.state || {};
 
   return (
     <div className="search-by-route-page">
@@ -21,7 +24,10 @@ function SearchByRoutesPage() {
       <section className="program-details">
         <div className="block-container">
           <div className="block">
-            1
+            <div className="route-container">
+              <h2 className="route">From {origin} to {destination}</h2>
+              <p>distance:</p>
+            </div>
           </div>
         </div>
       </section>
