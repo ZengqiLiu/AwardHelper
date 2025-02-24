@@ -42,7 +42,7 @@ const RoutesInput = forwardRef(({ onInputChange }, ref) => {
       onInputChange={onInputChange}
       fetchData={fetchAirportData}
       labelFormatter={routesLabelFormatter}
-      placeholder="Input IATA code of an airport"
+      placeholder="Input name or IATA code of an airport"
       maxCount={2}
       initialCount={2}
       fetchOnMount={false}
