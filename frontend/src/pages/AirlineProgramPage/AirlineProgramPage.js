@@ -8,19 +8,7 @@ import SelfRedeemNotes  from './SelfRedeemNotes';
 import PartnerRedeemTable from './PartnerRedeemTable';
 import TicketingTable from './TicketingTable';
 import './AirlineProgramPage.css';
-
-// Helper function to extract the two-letter code
-function extractCode(item) {
-  const match = item.match(/\((\w{2})\)/);
-  if (match) {
-    return match[1].toUpperCase();
-  }
-  // If the input is exactly two letters (case-insensitive), return them in uppercase.
-  if (item && item.length === 2 && /^[a-zA-Z0-9]{2}$/.test(item)) {
-    return item.toUpperCase();
-  }
-  return null;
-}
+import { extractProgramCode } from '../../utils/extractProgramCode';
 
 function AirlineProgramPage() {
   const location = useLocation();
@@ -54,7 +42,7 @@ function AirlineProgramPage() {
 
     // Determine which codes need to be fetched.
     const codesToFetch = programList
-      .map(program => extractCode(program))
+      .map(program => extractProgramCode(program))
       .filter((code) => code && !fetchedCodesRef.current.has(code));
 
     if (codesToFetch.length === 0) {
@@ -117,7 +105,7 @@ function AirlineProgramPage() {
       <section className="program-details">
         <div className="block-container">
           {programList.map((program, index) => {
-            const code = extractCode(program);
+            const code = extractProgramCode(program);
             const details = programDetails[code];
             return (
               <div key={index} className="block">

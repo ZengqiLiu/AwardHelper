@@ -4,17 +4,8 @@ import Button from '../../components/Button';
 import AwardProgramInput from './AwardProgramInput';
 import './HomePage.css';
 import RoutesInput from './RoutesInput';
-
-// Helper function to extract the two-letter code
-function extractProgramCode(item) {
-  const match = item.match(/\((\w{2})\)/);
-  return match ? match[1] : null;
-}
-
-function extractIataCode(item) {
-  const match = item.match(/\((\w{3})\)/);
-  return match ? match[1] : null;
-}
+import { extractProgramCode } from '../../utils/extractProgramCode';
+import { extractIataCode } from '../../utils/extractIataCode';
 
 function HomePage() {
   const awardProgramInputRef = useRef(); // Ref for AwardProgramInput
