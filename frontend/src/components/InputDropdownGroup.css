@@ -16,10 +16,12 @@
     gap: 10px;            /* Space between label and textbox */
     align-items: center;  /* Vertical alignment */
     white-space: nowrap;  /* Prevent label wrapping */
+    margin-bottom: 15px;
 }
 
 .dropdown-wrapper .label-and-textbox label {
     width: 35%;
+    text-align: right;
 }
 
 
