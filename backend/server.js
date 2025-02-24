@@ -46,6 +46,28 @@ app.get("/api/search-airport", async (req, res) => {
 
             // Filter out airports without a valid IATA code.
             const airportsWithIATACode = records.filter(record => record.iata_code && record.iata_code.trim() !== "");
+    
+            // Check if searchTerm matches the pattern "Name (XXX)"
+            const pattern = /^(.*)\s+\(([A-Z]{3})\)$/;
+            const match = searchTerm.match(pattern);
+
+            if (match) {
+            // Extract the name part and IATA code part
+            const namePart = match[1].trim();
+            const codePart = match[2].trim();
+
+            // Perform an exact lookup on both fields (case-insensitive for name)
+            const exactMatch = airportsWithIATACode.find((record) => {
+                return (
+                record.iata_code.toUpperCase() === codePart &&
+                record.name.toLowerCase() === namePart.toLowerCase()
+                );
+            });
+
+            if (exactMatch) {
+                return res.json(exactMatch);
+            }
+            }
 
             if (searchTerm) {
                 const normalize = (str) => 

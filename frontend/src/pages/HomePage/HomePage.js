@@ -44,12 +44,11 @@ function HomePage() {
       return;
     }
   
-    const { from, to } = routeInputRef.current.getInputValues();
-    console.log("Selected Origin:", from);
-    console.log("Selected Destination:", to);
+    const airportsOnTheRoute = routeInputRef.current.getInputValues();
+    console.log("Airports on the Route:", airportsOnTheRoute);
 
     // Navigate to the next page with selected routes
-    navigate(`/SearchByRoutes?from=${extractIataCode(from)}&to=${extractIataCode(to)}`, { state: { origin: from, destination: to } });
+    navigate(`/SearchByRoutes?route=${Object.values(airportsOnTheRoute).map(airport => extractIataCode(airport)).join('&')}`, { state: { airports: airportsOnTheRoute } });
   };
 
   return (

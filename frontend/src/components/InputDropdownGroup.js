@@ -4,7 +4,7 @@ import "./InputDropdownGroup.css";
 
 const InputDropdownGroup = forwardRef(({
   onInputChange,
-  fetchData, // function to fetch data (optionally based on the input value)
+  fetchData, // function to fetch data (optionally based on the input value and index)
   labelFormatter,
   placeholder,
   maxCount,
@@ -13,36 +13,62 @@ const InputDropdownGroup = forwardRef(({
   fetchOnMount = false,
   inputChangeCondition, // function: (value) => boolean, to decide if fetchData should run on input change
 }, ref) => {
-  const [dropdownData, setDropdownData] = useState(defaultOptions);
+  // Create an array state so each dropdown can have its own options.
+  const [dropdownDatas, setDropdownDatas] = useState(
+    () => Array.from({ length: initialCount }, () => [...defaultOptions])
+  );
   const [error, setError] = useState(null);
   const [itemCount, setItemCount] = useState(initialCount);
   const inputDropdownRefs = useRef({});
 
-  // If needed, fetch initial data on mount.
+  // If needed, fetch initial data for each dropdown on mount.
   useEffect(() => {
     if (fetchOnMount && fetchData) {
-      fetchData()
-        .then((data) => setDropdownData(data))
-        .catch((err) => setError(err.message));
+      Promise.all(
+        Array.from({ length: itemCount }, (_, index) => fetchData(null, index))
+      )
+      .then((dataArray) => setDropdownDatas(dataArray))
+      .catch((err) => setError(err.message));
     }
-  }, [fetchOnMount, fetchData]);  
+  }, [fetchOnMount, fetchData, itemCount]);
 
-  const handleInputChange = (index, value) => {    
+  const handleInputChange = (index, value) => {
     if (inputChangeCondition && inputChangeCondition(value) && fetchData) {
-      fetchData(value)
-        .then((data) => setDropdownData(data))
+      // Pass index to fetchData so it can fetch the options for this particular dropdown.
+      fetchData(value, index)
+        .then((data) => {
+          setDropdownDatas(prev => {
+            const newDatas = [...prev];
+            newDatas[index] = data;
+            return newDatas;
+          });
+        })
         .catch((err) => {
-          setDropdownData([]);
+          setDropdownDatas(prev => {
+            const newDatas = [...prev];
+            newDatas[index] = [];
+            return newDatas;
+          });
           setError(err.message);
         });
     } else if (inputChangeCondition && !inputChangeCondition(value)) {
-      // For example, clear options when condition is not met.
-      setDropdownData([]);
+      // Clear only the options for this dropdown.
+      setDropdownDatas(prev => {
+        const newDatas = [...prev];
+        newDatas[index] = [];
+        return newDatas;
+      });
     }
     
     if (onInputChange) {
       onInputChange(index, value);
     }
+  };
+
+  // When a new item is added, also add a corresponding default options list.
+  const addItem = () => {
+    setItemCount(prevCount => prevCount + 1);
+    setDropdownDatas(prev => [...prev, [...defaultOptions]]);
   };
 
   // Expose methods to the parent via ref.
@@ -83,7 +109,8 @@ const InputDropdownGroup = forwardRef(({
             <InputDropdown
               ref={(el) => (inputDropdownRefs.current[index] = el)}
               placeholder={placeholder}
-              options={dropdownData}
+              // Pass the options specific to this dropdown.
+              options={dropdownDatas[index] || []}
               onInputChange={(value) => handleInputChange(index, value)}
             />
           </div>
@@ -95,7 +122,7 @@ const InputDropdownGroup = forwardRef(({
           <label>
             <input
               type="checkbox"
-              onChange={() => setItemCount(itemCount + 1)}
+              onChange={addItem}
             />
             Add another item
           </label>
