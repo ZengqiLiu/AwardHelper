@@ -48,19 +48,39 @@ app.get("/api/search-airport", async (req, res) => {
             const airportsWithIATACode = records.filter(record => record.iata_code && record.iata_code.trim() !== "");
 
             if (searchTerm) {
-                const lowerSearchTerm = searchTerm.toLowerCase();
-                const matchingAirports = airportsWithIATACode.filter(record =>
-                record.iata_code.toLowerCase().includes(lowerSearchTerm) ||
-                record.name.toLowerCase().includes(lowerSearchTerm)
-                );
+                const normalize = (str) => 
+                    str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+                const normalizedSearchTerm = normalize(searchTerm);
+                let matchingAirports = [];
+                
+                // When input is less than 4 characters, prioritize fuzzy matching on IATA code first.
+                if (searchTerm.length < 4) {
+                  // First, get matches from the IATA code field.
+                  const codeMatches = airportsWithIATACode.filter(record =>
+                    normalize(record.iata_code).includes(normalizedSearchTerm)
+                  );
+                  // Then, get additional matches from the airport name, excluding those already in codeMatches.
+                  const nameMatches = airportsWithIATACode.filter(record =>
+                    normalize(record.name).includes(normalizedSearchTerm) &&
+                    !codeMatches.includes(record)
+                  );
+                  matchingAirports = [...codeMatches, ...nameMatches];
+                } else {
+                  // For longer inputs, search both fields simultaneously.
+                  matchingAirports = airportsWithIATACode.filter(record =>
+                    normalize(record.iata_code).includes(normalizedSearchTerm) ||
+                    normalize(record.name).includes(normalizedSearchTerm)
+                  );
+                }
+                
                 return res.json(matchingAirports);
             } else if (iataCode) {
-                // Fallback to exact match if needed.
+                // Exact match by IATA code when provided.
                 const foundAirport = airportsWithIATACode.find(record => record.iata_code.toUpperCase() === iataCode.toUpperCase());
                 if (foundAirport) {
-                return res.json(foundAirport);
+                  return res.json(foundAirport);
                 } else {
-                return res.json([]);
+                  return res.json([]);
                 }
             }
         });
