@@ -12,7 +12,6 @@ const InputDropdownGroup = forwardRef(({
   defaultOptions = [],
   fetchOnMount = false,
   inputChangeCondition, // function: (value) => boolean, to decide if fetchData should run on input change
-  applyExactOptionCheck = false, // If true, perform the exact options check (RoutesInput requirement)
 }, ref) => {
   const [dropdownData, setDropdownData] = useState(defaultOptions);
   const [error, setError] = useState(null);
@@ -28,15 +27,7 @@ const InputDropdownGroup = forwardRef(({
     }
   }, [fetchOnMount, fetchData]);  
 
-  const handleInputChange = (index, value) => {
-    // If the current value exactly matches one of the available options, do nothing.
-    if (applyExactOptionCheck && dropdownData.length > 0 && dropdownData[0].items.includes(value)) {
-      if (onInputChange) {
-        onInputChange(index, value);
-      }
-      return;
-    }
-    
+  const handleInputChange = (index, value) => {    
     if (inputChangeCondition && inputChangeCondition(value) && fetchData) {
       fetchData(value)
         .then((data) => setDropdownData(data))
@@ -83,8 +74,6 @@ const InputDropdownGroup = forwardRef(({
 
   return (
     <div>
-      {error && <p className="error">{error}</p>}
-
       {Array.from({ length: itemCount }, (_, index) => (
         <div className="dropdown-wrapper" key={index}>
           <div className="label-and-textbox">
@@ -112,6 +101,7 @@ const InputDropdownGroup = forwardRef(({
           </label>
         </div>
       )}
+      {error && <p className="error">{error}</p>}
     </div>
   );
 });

@@ -2,24 +2,35 @@ import React, { forwardRef } from "react";
 import InputDropdownGroup from "../../components/InputDropdownGroup";
 
 const RoutesInput = forwardRef(({ onInputChange }, ref) => {
-  // Fetch airport info when the IATA code has exactly 3 characters.
   const fetchAirportData = (value) => {
-    if (value.length === 3) {
-      const code = value.toUpperCase();
-      return fetch(`http://localhost:5000/api/search-airport?iata_code=${code}`)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Airport not found");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          const option = `${data.name} (${data.iata_code})`;
-          return [{ group: "Matching Airport", items: [option] }];
-        });
+    const trimmed = value.trim();
+    if (trimmed.length === 0) {
+      return Promise.resolve([]);
     }
-    return Promise.resolve([]);
+    
+    // Always use fuzzy search regardless of input length
+    const endpoint = `http://localhost:5000/api/search-airport?search=${encodeURIComponent(trimmed)}`;
+  
+    return fetch(endpoint)
+      .then((response) => {
+        if (!response.ok) {
+          return [];
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Ensure data is treated as an array.
+        if (!Array.isArray(data)) {
+          data = [data];
+        }
+        // Map the data to your desired display format.
+        const options = data.map(
+          (airport) => `${airport.name} (${airport.iata_code})`
+        );
+        return [{ group: "Matching Airports", items: options }];
+      });
   };
+  
 
   // Generate label based on position.
   const routesLabelFormatter = (index, count) =>
@@ -35,8 +46,7 @@ const RoutesInput = forwardRef(({ onInputChange }, ref) => {
       maxCount={2}
       initialCount={2}
       fetchOnMount={false}
-      inputChangeCondition={(value) => value.length === 3}
-      applyExactOptionCheck={true}
+      inputChangeCondition={(value) => value.trim().length > 0}
     />
   );
 });

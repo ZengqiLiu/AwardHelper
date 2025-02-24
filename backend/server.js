@@ -23,9 +23,10 @@ app.use('/api/award-programs', awardProgramsRoutes);
 
 // API route to search for an airport
 app.get("/api/search-airport", async (req, res) => {
+    const searchTerm = req.query.search;
     const iataCode = req.query.iata_code;
-    if (!iataCode) {
-        return res.status(400).json({ error: "IATA code is required" });
+    if (!searchTerm && !iataCode) {
+        return res.status(400).json({ error: "IATA code or search term is required" });
     }
 
     const url = "https://raw.githubusercontent.com/davidmegginson/ourairports-data/main/airports.csv";
@@ -43,12 +44,24 @@ app.get("/api/search-airport", async (req, res) => {
                 return res.status(500).json({ error: "CSV processing error", details: err.message });
             }
 
-            // Find the airport with the matching IATA code
-            const foundAirport = records.find(record => record.iata_code === iataCode);
-            if (foundAirport) {
+            // Filter out airports without a valid IATA code.
+            const airportsWithIATACode = records.filter(record => record.iata_code && record.iata_code.trim() !== "");
+
+            if (searchTerm) {
+                const lowerSearchTerm = searchTerm.toLowerCase();
+                const matchingAirports = airportsWithIATACode.filter(record =>
+                record.iata_code.toLowerCase().includes(lowerSearchTerm) ||
+                record.name.toLowerCase().includes(lowerSearchTerm)
+                );
+                return res.json(matchingAirports);
+            } else if (iataCode) {
+                // Fallback to exact match if needed.
+                const foundAirport = airportsWithIATACode.find(record => record.iata_code.toUpperCase() === iataCode.toUpperCase());
+                if (foundAirport) {
                 return res.json(foundAirport);
-            } else {
-                return res.status(404).json({ error: "IATA code not found" });
+                } else {
+                return res.json([]);
+                }
             }
         });
     } catch (error) {
