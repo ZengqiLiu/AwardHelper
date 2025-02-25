@@ -1,11 +1,82 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import './SearchByRoutesPage.css';
 import AirportTable from './AirportTable';
+import { extractIataCode } from '../../utils/extractIataCode';
 
 function SearchByRoutesPage() {
   const location = useLocation();
-  const { origin, destination } = location.state || {};
+  const [searchParams] = useSearchParams();
+  
+  const stateAirports = location.state?.airports;
+  console.log("stateAirports:", stateAirports);
+
+  const airportList = useMemo(() => {
+    if (stateAirports && Object.keys(stateAirports).length > 0) {
+      return Array.isArray(stateAirports)
+        ? stateAirports
+        : Object.values(stateAirports);
+    } else {
+      return searchParams.getAll('airport');
+    }
+  }
+  , [stateAirports, searchParams]);
+
+  const [airportDetails, setAirportDetails] = useState({});
+
+  const fetchedCodesRef = useRef(new Set());
+  const isFetchingRef = useRef(false);
+
+  useEffect(() => {
+    if (isFetchingRef.current) return;
+    isFetchingRef.current = true;
+
+    const codesToFetch = airportList
+      .map(airport => extractIataCode(airport))
+      .filter((code) => code && !fetchedCodesRef.current.has(code));
+
+    if (codesToFetch.length === 0) {
+      isFetchingRef.current = false;
+      return;
+    }
+
+    const fetchDetails = async () => {
+      try {
+        const results = await Promise.all(
+          codesToFetch.map(async (code) => {
+            //Endpoint should be modified
+            const response = await fetch(`http://localhost:5000/api/search-airport?search=${encodeURIComponent(code)}`);
+            const data = await response.json();
+            console.log("data:", data);
+            return { code, data };
+          })
+        );
+        
+        results.forEach(({ code }) => {
+          fetchedCodesRef.current.add(code);
+        });
+
+        // Update airportDetails only if there is a change.
+        setAirportDetails((prevDetails) => {
+          const newDetails = { ...prevDetails };
+          let updated = false;
+          results.forEach(({ code, data }) => {
+            if (!prevDetails[code] || prevDetails[code].updatedDate !== data.updatedDate) {
+              newDetails[code] = data;
+              updated = true;
+            }
+          });
+          return updated ? newDetails : prevDetails;
+        });
+      } catch (error) {
+        console.error("Error fetching program details:", error);
+      } finally {
+        isFetchingRef.current = false;
+      }
+    };
+
+    fetchDetails();
+  }, [airportList]);
 
   return (
     <div className="search-by-route-page">
@@ -27,9 +98,6 @@ function SearchByRoutesPage() {
           <div className="block">
             <div className="route-container">
               <h2>Route Information</h2>
-              <h3>Origin</h3>
-              <AirportTable />
-              <h3>Destination</h3>
               <AirportTable />
             </div>
           </div>

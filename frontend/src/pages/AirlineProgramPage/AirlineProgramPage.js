@@ -15,6 +15,7 @@ function AirlineProgramPage() {
   const [searchParams] = useSearchParams();
 
   const statePrograms = location.state?.programs;
+  console.log("statePrograms:", statePrograms);
 
   // Memoize programList to prevent it from being re-created on every render.
   const programList = useMemo(() => {
