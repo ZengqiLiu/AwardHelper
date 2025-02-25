@@ -82,7 +82,7 @@ function Table({ columns, data }) {
     if (!data || !columns || data.length === 0) {
         return <p>No data available.</p>;
     }
-
+    
     return (
         <div className="table-container">
             <table className="table">

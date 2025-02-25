@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import './SearchByRoutesPage.css';
 import AirportTable from './AirportTable';
-import { extractIataCode } from '../../utils/extractIataCode';
 
 function SearchByRoutesPage() {
   const location = useLocation();
@@ -32,7 +31,7 @@ function SearchByRoutesPage() {
     isFetchingRef.current = true;
 
     const codesToFetch = airportList
-      .map(airport => extractIataCode(airport))
+      .map(airport => airport)
       .filter((code) => code && !fetchedCodesRef.current.has(code));
 
     if (codesToFetch.length === 0) {
@@ -77,6 +76,7 @@ function SearchByRoutesPage() {
 
     fetchDetails();
   }, [airportList]);
+  console.log("airportDetails:", airportDetails);
 
   return (
     <div className="search-by-route-page">
@@ -98,7 +98,8 @@ function SearchByRoutesPage() {
           <div className="block">
             <div className="route-container">
               <h2>Route Information</h2>
-              <AirportTable />
+              <h3>Airports</h3>
+              <AirportTable airportInfo={airportDetails}/>
             </div>
           </div>
         </div>
