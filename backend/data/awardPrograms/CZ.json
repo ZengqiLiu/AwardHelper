@@ -182,7 +182,14 @@
     ],
     "selfRedeemNotes": [
         "3U and EU use the same standard as CZ",
-        "Some routes require special redemption rules^"
+        {
+            "type": "modal",
+            "content": "Some routes require special redemption rules^",
+            "modalData": {
+              "title": "Special Redemption Rules",
+              "body": "Detailed explanation of the special redemption rules goes here."
+            }
+          }
     ],
     "partnerRoutes": [
         {

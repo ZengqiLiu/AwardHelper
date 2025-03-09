@@ -1,5 +1,5 @@
 import React from "react";
-import List from "../../components/List";
+import { parseLinks } from "../../utils/contentParser";
 
 function SelfRedeemNotes({ programDetails }) {
     if (!programDetails) {
@@ -14,7 +14,7 @@ function SelfRedeemNotes({ programDetails }) {
     return (
         <div className="self-redeem-notes">
             <h4>Notes:</h4>
-            <List items={notes} />
+            {parseLinks(notes)}
         </div>
     );
 }   
