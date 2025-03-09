@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from'react';
 import Table from '../../components/Table';
-import { fetchCountryName } from '../../utils/api/fetchData';
+import { fetchCountryName, fetchContinentName } from '../../utils/api/fetchData';
 
 function AirportTable({ airportInfo }) {
     const columns = [
@@ -23,6 +23,7 @@ function AirportTable({ airportInfo }) {
           const updatedAirports = await Promise.all(
             airportArray.map(async (airport, index) => {
               const countryName = await fetchCountryName(airport.iso_country);
+              const continentName = await fetchContinentName(airport.continent);
               return {
                 type: index === 0
                     ? 'From'
@@ -33,7 +34,7 @@ function AirportTable({ airportInfo }) {
                 municipality: airport.municipality,
                 iata_code: airport.iata_code,
                 country: countryName,
-                continent: airport.continent
+                continent: continentName
               };
             })
           );

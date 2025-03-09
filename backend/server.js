@@ -20,7 +20,7 @@ const airportRoutes = require('./routes/airportRoutes.js');
 const locationRoutes = require('./routes/locationRoutes.js');
 
 app.use('/api/award-programs', awardProgramsRoutes);
-app.use('/api', airportRoutes); // Airport route will handle /search-airport
+app.use('/api', airportRoutes);
 app.use('/api', locationRoutes);
 
 app.listen(PORT, () => {
