@@ -17,9 +17,11 @@ app.get('/', (req, res) => {
 // Import and use routes
 const awardProgramsRoutes = require('./routes/awardPrograms.js');
 const airportRoutes = require('./routes/airportRoutes.js');
+const locationRoutes = require('./routes/locationRoutes.js');
 
 app.use('/api/award-programs', awardProgramsRoutes);
 app.use('/api', airportRoutes); // Airport route will handle /search-airport
+app.use('/api', locationRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
