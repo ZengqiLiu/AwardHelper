@@ -9,7 +9,7 @@ function AirportTable({ airportInfo }) {
     const columns = [
         { label: 'Type', field: 'type' },
         { label: 'Airport Name', field: 'name' },
-        { label: 'City', field:'municipality' },
+        { label: 'City', field: 'municipality' },
         { label: 'IATA', field: 'iata_code' },
         { label: 'Country', field: 'country' },
         { label: 'Continent', field: 'continent' },
