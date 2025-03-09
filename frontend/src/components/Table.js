@@ -46,7 +46,7 @@ function Table({ columns, data }) {
     };
 
     const renderCellContent = (cellData) => {
-        if (!cellData) return null;
+        if (cellData === null || cellData === undefined) return null;
         // If cellData is an array, flatten it
         if (Array.isArray(cellData)) {
             return (
