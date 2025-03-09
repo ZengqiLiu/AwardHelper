@@ -1,17 +1,8 @@
 import React, { forwardRef } from "react";
 import InputDropdownGroup from "../../components/InputDropdownGroup";
+import { fetchAwardPrograms } from "../../utils/api/fetchData";
 
 const AwardProgramInput = forwardRef(({ onInputChange }, ref) => {
-  // Fetch award programs on mount.
-  const fetchAwardPrograms = () =>
-    fetch(`http://localhost:5000/api/award-programs`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      });
-
   const awardLabelFormatter = (index) => `Award Program ${index + 1}:`;
 
   return (

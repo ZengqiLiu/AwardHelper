@@ -1,6 +1,6 @@
 // src/components/AirportTable.js
 
-import React, { useEffect, useState } from'react';
+import React, { useEffect, useState } from 'react';
 import Table from '../../components/Table';
 import { fetchCountryName, fetchContinentName } from '../../utils/api/fetchData';
 import { distance } from '../../utils/distance';

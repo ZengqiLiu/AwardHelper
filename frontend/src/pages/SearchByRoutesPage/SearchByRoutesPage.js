@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import './SearchByRoutesPage.css';
 import AirportTable from './AirportTable';
+import RedemptionTable from './RedemptionTable';
 
 function SearchByRoutesPage() {
   const location = useLocation();
@@ -100,6 +101,8 @@ function SearchByRoutesPage() {
               <h2>Route Information</h2>
               <h3>Airports</h3>
               <AirportTable airportInfo={airportDetails}/>
+              <h3>Redemption Choices</h3>
+              <RedemptionTable airportInfo={airportDetails}/>
             </div>
           </div>
         </div>
