@@ -60,6 +60,9 @@
     "moreThanOnePartner": ["-"],
     "mixedCabin": ["-"],
     "transferInThirdRegion": ["-"],
+    "selfZones": {
+        "China": { "region": "*", "country": "CN", "continent": "AS" }
+    },
     "selfRoutes": [
         {
             "departureZone": "China",
@@ -232,21 +235,89 @@
             }
           }
     ],
+    "partnerZones": {
+        "Northeast Asia^": {
+            "region": "*", 
+            "country": ["CN", "TW", "KR", "JP", "RU", "MN"], 
+            "continent": "AS"
+        },
+        "Southeast Asia^": {
+            "region": "*",
+            "country": ["HK", "MO", "BN", "KH", "GU", "ID", "LA", "MY", "MM", "PH", "MP", "SG", "TH", "VN"],
+            "continent": "AS"
+        },
+        "Southwest Asia^": {
+            "region": "*",
+            "country": ["AF", "BD", "BT", "IN", "KZ", "KG", "NP", "PK", "LK", "TJ", "TM", "UZ"],
+            "continent": "AS"
+        },
+        "South Pacific^": {
+            "region": "*",
+            "country": ["AU", "NZ", "AS", "FJ", "PF", "WS", "KI", "TO", "MH", "FM", "NR", "NC", "PW", "PG", "SB", "TV", "VU"],
+            "continent": "OC"
+        },
+        "USA/Canada^": {
+            "region": "*",
+            "country": ["US", "CA"],
+            "continent": "NA"
+        },
+        "Hawaii": {
+            "region": "US-HI",
+            "country": "US",
+            "continent": "NA"
+        },
+        "Mexico/Central America^": {
+            "region": "*",
+            "country": ["MX", "AG", "AW", "BS", "BB", "BM", "KY", "CU", "DM", "DO", "HT", "JM", "MQ", "PR", "BZ", "CR", "SV", "GT", "HN", "NI", "VG", "GD", "GP", "MS", "KN", "LC", "VC", "TT", "VI", "AN"],
+            "continent": "NA"
+        },
+        "Latin America 1^": {
+            "region": "*",
+            "country": ["CO", "EC", "GF", "GY", "PA", "PE", "SR", "VE"],
+            "continent": "SA"
+        },
+        "Latin America 2^": {
+            "region": "*",
+            "country": ["AR", "BO", "BR", "CL", "PY", "UY"],
+            "continent": "SA"
+        },
+        "Europe^": {
+            "region": "*",
+            "country": ["FR", "DE", "GB", "NL", "IT", "CZ", "AL", "AD", "AM", "AT", "BY", "BE", "BA", "BG", "HR", "CY", "DK", "EE", "FI", "GI", "GR", "HU", "IS", "IE", "LV", "LI", "LT", "LU", "MK", "MT", "MD", "MC", "NO", "PL", "PT", "RO", "SM", "SK", "SI", "ES", "SE", "CH", "TR", "UA", "RU", "YU"],
+            "continent": "EU"
+        },
+        "North Africa^": {
+            "region": "*",
+            "country": ["DZ", "MA", "TN", "LY"],
+            "continent": "AF"
+        },
+        "Middle East/Near East^": {
+            "region": "*",
+            "country": ["BH", "EG", "IR", "IQ", "JO", "KW", "LB", "QA", "SA", "SD", "OM", "SY", "AE", "YE"],
+            "continent": "AS"
+        },
+        "Central & South Africa/Indian Ocean^": {
+            "region": "*",
+            "country": ["AO", "BJ", "BW", "BF", "BI", "CM", "CF", "TD", "KM", "CG", "CI", "DJ", "ER", "ET", "GA", "GM", "GH", "GN", "KE", "LS", "LR", "MG", "MW", "MV", "ML", "MU", "MZ", "NA", "NE", "NG", "RE", "RW", "SN", "SC", "SO", "ZA", "SZ", "TZ", "TG", "UG", "ZR", "ZM", "ZW"],
+            "continent": "AF"
+        }
+          
+    },
     "partnerRoutes": [
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
             "landingZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
@@ -259,9 +330,9 @@
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
@@ -282,9 +353,9 @@
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
@@ -305,9 +376,9 @@
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
@@ -328,9 +399,9 @@
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
@@ -351,18 +422,34 @@
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
+                    "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
+                }
+            },
+            "landingZone": "Hawaii",
+            "cost": {
+                "economy": "60,000",
+                "business": "115,000",
+                "first": "145,000"
+            }
+        },
+        {
+            "departureZone": {
+                "type": "modal",
+                "content": "Northeast Asia^",
+                "modalData": {
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
             "landingZone": {
                 "type": "modal",
-                "content": "Mexico/Hawaii/Central America^",
+                "content": "Mexico/Central America^",
                 "modalData": {
-                    "title": "Mexico/Hawaii/Central America (Zone F)",
-                    "body": "Mexico, Hawaii, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
+                    "title": "Mexico/Central America (Zone F)",
+                    "body": "Mexico, Antigua, Aruba, Bahamas, Barbados, Bermuda, Cayman Islands, Cuba, Dominica, Dominican Republic, Haiti, Jamaica, Martinique, Puerto Rico, Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, British Virgin Islands, Grenada, Guadeloupe, Montserrat, Saint Kitts and Nevis, Saint Lucia, Saint Vincent, Trinidad and Tobago, U.S. Virgin Islands, Antilles"
                 }
             },
             "cost": {
@@ -374,9 +461,9 @@
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
@@ -397,9 +484,9 @@
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
@@ -420,9 +507,9 @@
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
@@ -443,9 +530,9 @@
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
@@ -466,9 +553,9 @@
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
@@ -489,9 +576,9 @@
         {
             "departureZone": {
                 "type": "modal",
-                "content": "Northeast Aisa^",
+                "content": "Northeast Asia^",
                 "modalData": {
-                    "title": "Northeast Aisa (Zone A)",
+                    "title": "Northeast Asia (Zone A)",
                     "body": "China, Taiwan, South Korea, Japan, East Russia, Mongolia"
                 }
             },
