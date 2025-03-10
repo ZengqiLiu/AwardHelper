@@ -13,7 +13,7 @@ function RedemptionTable({ airportInfo }) {
 
   useEffect(() => {
     async function fetchIssuingPrograms() {
-      // Fetch grouped award programs and flatten them.
+      // Fetch grouped award programs and flatten into an array.
       const groups = await fetchAwardPrograms();
       const flattened = groups.reduce((acc, group) => {
         group.items.forEach(item => {
@@ -22,23 +22,40 @@ function RedemptionTable({ airportInfo }) {
         return acc;
       }, []);
 
-      // For each issuing program, extract its two-letter code,
-      // fetch details (which contains an "airlines" array),
-      // and create two rows: one for the program itself and one for its partners.
+      // For each issuing program, fetch its details.
+      // For each program, check if selfTableAirlines, partnerTableAirlines, or specialTableAirlines exists.
+      // Create a separate row for each one.
       const rowsNested = await Promise.all(
         flattened.map(async (program) => {
           const code = extractProgramCode(program.issuing_program);
           const detailsObj = await fetchProgramDetails([code]);
-          // Assume detailsObj[code].airlines is an array of airline objects.
-          const partnersList = detailsObj[code]?.airlines || [];
-          const partnerCodes = partnersList.map(partner => partner.code);
-          return [
-            { issuing_program: program.issuing_program, operating_airlines: code },
-            { issuing_program: program.issuing_program, operating_airlines: partnerCodes.join(', ') }
-          ];
+          const details = detailsObj[code] || {};
+          let programRows = [];
+
+          if (details.selfTableAirlines) {
+            const selfCodes = details.selfTableAirlines.map(a => a.code);
+            programRows.push({
+              issuing_program: program.issuing_program,
+              operating_airlines: selfCodes.join(', ')
+            });
+          }
+          if (details.partnerTableAirlines) {
+            const partnerCodes = details.partnerTableAirlines.map(a => a.code);
+            programRows.push({
+              issuing_program: program.issuing_program,
+              operating_airlines: partnerCodes.join(', ')
+            });
+          }
+          if (details.specialTableAirlines) {
+            const specialCodes = details.specialTableAirlines.map(a => a.code);
+            programRows.push({
+              issuing_program: program.issuing_program,
+              operating_airlines: specialCodes.join(', ')
+            });
+          }
+          return programRows;
         })
       );
-      // Flatten the nested array into a single array of rows.
       setRows(rowsNested.flat());
     }
     fetchIssuingPrograms();

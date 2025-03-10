@@ -1,11 +1,15 @@
 {
     "updatedDate": "2025-02-10",
-    "airlines": [
+    "selfTableAirlines": [
+        { "airline": "China Southern Airlines", "code": "CZ", "alliance": "None" },
+        { "airline": "Chengdu Airlines", "code": "EU", "alliance": "None"},
+        { "airline": "Sichuan Airlines", "code": "3U", "alliance": "None" }
+    ],
+    "partnerTableAirlines": [
         { "airline": "Aeroflot", "code": "SU", "alliance": "None" },
         { "airline": "Air Europa", "code": "UX", "alliance": "SkyTeam" },
         { "airline": "Air France", "code": "AF", "alliance": "SkyTeam" },
         { "airline": "American Airlines", "code": "AA", "alliance": "Oneworld" },
-        { "airline": "Chengdu Airlines", "code": "EU", "alliance": "None"},
         { "airline": "China Airlines", "code": "CI", "alliance": "SkyTeam" },
         { "airline": "Delta Airlines", "code": "DL", "alliance": "SkyTeam" },
         { "airline": "Korean Air", "code": "KE", "alliance": "SkyTeam" },
@@ -13,7 +17,6 @@
         { "airline": "Mandarin Airlines", "code": "AE", "alliance": "SkyTeam", "note": "Between Taiwan and Mainland China only" },
         { "airline": "Middle East Airlines", "code": "ME", "alliance": "SkyTeam" },
         { "airline": "Saudia Airlines", "code": "SV", "alliance": "Skyteam" },
-        { "airline": "Sichuan Airlines", "code": "3U", "alliance": "None" },
         { "airline": "Vietnam Airlines", "code": "VN", "alliance": "SkyTeam" },
         { "airline": "Xiamen Airlines", "code": "MF", "alliance": "SkyTeam" }
     ],          
