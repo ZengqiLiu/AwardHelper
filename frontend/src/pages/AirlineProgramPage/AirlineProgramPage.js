@@ -77,7 +77,7 @@ function AirlineProgramPage() {
                 </div>
                 {code && details && (
                   <>
-                    <h3>Full Redeemable Airline List</h3>
+                    <h3>Full Redeemable Partner Airline List</h3>
                     <AirlineTable programDetails={details} />
 
                     <h3>Additional Fees</h3>

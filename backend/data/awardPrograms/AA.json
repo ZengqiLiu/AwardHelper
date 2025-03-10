@@ -2,7 +2,6 @@
     "updatedDate": "2025-01-21",
     "airlines": [
         { "airline": "Alaska Airlines", "code": "AS", "alliance": "Oneworld" },
-        { "airline": "American Airlines", "code": "AA", "alliance": "Oneworld" },
         { "airline": "British Airways", "code": "BA", "alliance": "Oneworld" },
         { "airline": "Cathay Pacific", "code": "CX", "alliance": "Oneworld" },
         { "airline": "Fiji Airways", "code": "FJ", "alliance": "Oneworld" },
