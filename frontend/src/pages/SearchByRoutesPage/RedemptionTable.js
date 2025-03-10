@@ -6,7 +6,8 @@ import { fetchAwardPrograms } from '../../utils/api/fetchData';
 
 function RedemptionTable({airportInfo}) {
     const columns = [
-        { label: 'Issuing Program', field: 'issuing_program' }
+        { label: 'Issuing Program', field: 'issuing_program' },
+        { label: 'Operating Airlines', field: 'operating_airlines' }
     ]
 
     const [issuingPrograms, setIssuingPrograms] = useState([]);

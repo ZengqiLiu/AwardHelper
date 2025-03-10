@@ -42,3 +42,18 @@ export async function fetchAwardPrograms() {
     return null;
   }
 }
+
+export async function fetchProgramDetails(codes) {
+  const results = await Promise.all(
+    codes.map(async (code) => {
+      const response = await fetch(`http://localhost:5000/api/award-programs/${code}`);
+      const data = await response.json();
+      return { code, data };
+    })
+  );
+  const details = {};
+  results.forEach(({ code, data }) => {
+    details[code] = data;
+  });
+  return details;
+}

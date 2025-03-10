@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import AirlineTable from './AirlineTable';
 import FeeTable from './FeeTable';
@@ -9,6 +9,7 @@ import PartnerRedeemTable from './PartnerRedeemTable';
 import TicketingTable from './TicketingTable';
 import './AirlineProgramPage.css';
 import { extractProgramCode } from '../../utils/extractProgramCode';
+import { fetchProgramDetails } from '../../utils/api/fetchData';
 
 function AirlineProgramPage() {
   const location = useLocation();
@@ -33,58 +34,16 @@ function AirlineProgramPage() {
   // Read all the "program" query parameters. For example, the URL may look like: /ProgramDetails?program=AA&program=CZ
   const [programDetails, setProgramDetails] = useState({});
 
-  // Refs to track fetched codes and prevent overlapping fetch calls.
-  const fetchedCodesRef = useRef(new Set());
-  const isFetchingRef = useRef(false);
-
   useEffect(() => {
-    if (isFetchingRef.current) return;
-    isFetchingRef.current = true;
-
-    // Determine which codes need to be fetched.
-    const codesToFetch = programList
-      .map(program => extractProgramCode(program))
-      .filter((code) => code && !fetchedCodesRef.current.has(code));
-
-    if (codesToFetch.length === 0) {
-      isFetchingRef.current = false;
-      return;
+    async function getProgramDetails() {
+      const codes = programList
+        .map((program) => extractProgramCode(program))
+        .filter((code) => code);
+      if (codes.length === 0) return;
+      const details = await fetchProgramDetails(codes);
+      setProgramDetails(details);
     }
-
-    const fetchDetails = async () => {
-      try {
-        const results = await Promise.all(
-          codesToFetch.map(async (code) => {
-            const response = await fetch(`http://localhost:5000/api/award-programs/${code}`);
-            const data = await response.json();
-            return { code, data };
-          })
-        );
-
-        results.forEach(({ code }) => {
-          fetchedCodesRef.current.add(code);
-        });
-
-        // Update programDetails only if there is a change.
-        setProgramDetails((prevDetails) => {
-          const newDetails = { ...prevDetails };
-          let updated = false;
-          results.forEach(({ code, data }) => {
-            if (!prevDetails[code] || prevDetails[code].updatedDate !== data.updatedDate) {
-              newDetails[code] = data;
-              updated = true;
-            }
-          });
-          return updated ? newDetails : prevDetails;
-        });
-      } catch (error) {
-        console.error("Error fetching program details:", error);
-      } finally {
-        isFetchingRef.current = false;
-      }
-    };
-
-    fetchDetails();
+    getProgramDetails();
   }, [programList]);
 
   return (

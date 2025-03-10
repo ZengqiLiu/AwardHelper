@@ -1,6 +1,6 @@
 [
     { "group": "Star Alliance", "items": ["Air Canada(AC) — Aeroplan", "United Airlines(UA) — Mileage Plus"] },
-    { "group": "Skyteam", "items": ["Air France(AF) / KLM Royal Dutch Airlines(KL) — Flying Blue", "Delta Airlines(DL) — Skymiles", "Virgin Atlantic(VS) — Flying Club"] },
+    { "group": "Skyteam", "items": [["Air France(AF)", "KLM Royal Dutch Airlines(KL) — Flying Blue"], "Delta Airlines(DL) — Skymiles", "Virgin Atlantic(VS) — Flying Club"] },
     { "group": "Oneworld", "items": ["Alaska Airlines(AS) — Mileage Plan", "American Airlines(AA) — AAdvantage", "British Airways(BA) — Executive Club", "Cathay Pacific(CX) — Asia Miles / Cathay", 
     "Finnair(AY) — Finnair Plus", "Iberia(IB) — Iberia Plus", "Qantas(QF) — Frequent Flyer", "Qatar Airways(QR) — Privilege Club"] },
     { "group": "Others", "items": ["China Southern Airlines(CZ) — Sky Pearl Club", "Etihad(EY) — Etihad Guest", "Hainan Airlines(HU) — Fortune Wings Club"] }
