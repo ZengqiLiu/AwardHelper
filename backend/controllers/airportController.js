@@ -28,24 +28,24 @@ exports.searchAirport = async (req, res) => {
   
           // Check if searchTerm matches the pattern "Name (XXX)"
           const pattern = /^(.*)\s+\(([A-Z]{3})\)$/;
-          const match = searchTerm.match(pattern);
-  
-          if (match) {
-              const namePart = match[1].trim();
-              const codePart = match[2].trim();
-              const exactMatch = airportsWithIATACode.find((record) => {
-                  return (
-                      record.iata_code.toUpperCase() === codePart &&
-                      record.name.toLowerCase() === namePart.toLowerCase()
-                  );
-              });
-  
-              if (exactMatch) {
-                  return res.json(exactMatch);
-              }
-          }
   
           if (searchTerm) {
+            const match = searchTerm.match(pattern);
+  
+            if (match) {
+                const namePart = match[1].trim();
+                const codePart = match[2].trim();
+                const exactMatch = airportsWithIATACode.find((record) => {
+                    return (
+                        record.iata_code.toUpperCase() === codePart &&
+                        record.name.toLowerCase() === namePart.toLowerCase()
+                    );
+                });
+    
+                if (exactMatch) {
+                    return res.json(exactMatch);
+                }
+            }
               const normalize = (str) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
               const normalizedSearchTerm = normalize(searchTerm);
               let matchingAirports = [];
