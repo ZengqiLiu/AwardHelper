@@ -1,5 +1,6 @@
 // controllers/airportController.js
 const { parse } = require('csv-parse');
+const { getZoneForAirport } = require('../utils/zoneMatcher');
 
 exports.searchAirport = async (req, res) => {
   const searchTerm = req.query.search;
@@ -76,3 +77,21 @@ exports.searchAirport = async (req, res) => {
       res.status(500).json({ error: "Server error", details: error.message });
   }
 };
+
+function getAirportZone(req, res) {
+  const { region, country, continent, awardPragramCode, zoneType } = req.body;
+  if (!region || !country || !continent || !awardPragramCode || !zoneType) {
+    return res.status(400).json({ error: "Missing required fields" });
+  }
+
+  const airportLocation = { region, country, continent };
+  const zone = getZoneForAirport(airportLocation, awardPragramCode, zoneType);
+  if (!zone) {
+    return res.status(404).json({ error: "No matching zone found" });
+  }
+
+  return res.json(zone);
+
+}
+
+module.exports = { getAirportZone };
