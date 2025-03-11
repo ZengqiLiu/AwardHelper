@@ -61,7 +61,8 @@
     "mixedCabin": ["-"],
     "transferInThirdRegion": ["-"],
     "selfZones": {
-        "China": { "region": "*", "country": "CN", "continent": "AS" }
+        "China": { "region": "*", "country": "CN", "continent": "AS" },
+        "HK/MO/TW/INTL": { "region": "*", "country": "*", "continent": "*" }
     },
     "selfRoutes": [
         {
@@ -300,6 +301,24 @@
             "region": "*",
             "country": ["AO", "BJ", "BW", "BF", "BI", "CM", "CF", "TD", "KM", "CG", "CI", "DJ", "ER", "ET", "GA", "GM", "GH", "GN", "KE", "LS", "LR", "MG", "MW", "MV", "ML", "MU", "MZ", "NA", "NE", "NG", "RE", "RW", "SN", "SC", "SO", "ZA", "SZ", "TZ", "TG", "UG", "ZR", "ZM", "ZW"],
             "continent": "AF"
+        },
+        "China": {
+            "domestic": true,
+            "region": "*",
+            "country": "CN",
+            "continent": "AS"
+        },
+        "Selected Countries Domestic^": {
+            "domestic": true,
+            "region": "*",
+            "country": ["US", "RU", "CA", "BR", "AU", "IN", "AR", "KZ", "SD", "DZ", "CG", "MX", "SA", "ID", "MY"],
+            "continent": "*"
+        },
+        "Taiwan/Other Countaries Domestic": {
+            "domestic": true,
+            "region": "*",
+            "country": "*",
+            "continent": "*"
         }
           
     },
