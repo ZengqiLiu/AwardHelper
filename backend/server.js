@@ -18,10 +18,12 @@ app.get('/', (req, res) => {
 const awardProgramsRoutes = require('./routes/awardPrograms.js');
 const airportRoutes = require('./routes/airportRoutes.js');
 const locationRoutes = require('./routes/locationRoutes.js');
+const distanceRoutes = require('./routes/distanceRoutes.js');
 
 app.use('/api/award-programs', awardProgramsRoutes);
 app.use('/api', airportRoutes);
 app.use('/api', locationRoutes);
+app.use('/api', distanceRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

@@ -2,8 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Table from '../../components/Table';
-import { fetchCountryName, fetchContinentName } from '../../utils/api/fetchData';
-import { distance } from '../../utils/distance';
+import { fetchCountryName, fetchContinentName, fetchDistance } from '../../utils/api/fetchData';
 
 function AirportTable({ airportInfo }) {
     const columns = [
@@ -31,7 +30,7 @@ function AirportTable({ airportInfo }) {
           const continentName = await fetchContinentName(airport.continent);
           let currentDistance = i === 0
             ? { distance_km: 0, distance_mi: 0 }
-            : distance(
+            : await fetchDistance(
                 airportArray[i].latitude_deg,
                 airportArray[i].longitude_deg,
                 airportArray[i - 1].latitude_deg,

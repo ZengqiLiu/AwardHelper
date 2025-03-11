@@ -57,3 +57,17 @@ export async function fetchProgramDetails(codes) {
   });
   return details;
 }
+
+export async function fetchDistance(lat1, lon1, lat2, lon2) {
+  try {
+    const response = await fetch(`http://localhost:5000/api/distance?lat1=${lat1}&lon1=${lon1}&lat2=${lat2}&lon2=${lon2}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Failed to fetch country name:", error);
+    return null;
+  }
+}
