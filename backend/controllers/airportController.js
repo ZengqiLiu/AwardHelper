@@ -78,14 +78,14 @@ exports.searchAirport = async (req, res) => {
   }
 };
 
-function getAirportZone(req, res) {
-  const { region, country, continent, awardPragramCode, zoneType } = req.body;
-  if (!region || !country || !continent || !awardPragramCode || !zoneType) {
+exports.getAirportZone = async (req, res) => {
+  const { region, country, continent, awardProgramCode, zoneType } = req.body;
+  if (!region || !country || !continent || !awardProgramCode || !zoneType) {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
-  const airportLocation = { region, country, continent };
-  const zone = getZoneForAirport(airportLocation, awardPragramCode, zoneType);
+  const airportInfo = { region, country, continent };
+  const zone = getZoneForAirport(airportInfo, awardProgramCode, zoneType);
   if (!zone) {
     return res.status(404).json({ error: "No matching zone found" });
   }
@@ -93,5 +93,3 @@ function getAirportZone(req, res) {
   return res.json(zone);
 
 }
-
-module.exports = { getAirportZone };

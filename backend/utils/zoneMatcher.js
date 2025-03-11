@@ -51,7 +51,7 @@ function getZoneForAirport(airportInfo, awardProgramCode, zoneType) {
         const zones = (zoneType === 'self') ? programData.selfZones : (zoneType === 'partner')? programData.partnerZones : (zoneType === 'special')? programData.specialZones : null;
 
         let bestMatch = null;
-        let bestMatchScore = -1;
+        let bestScore = -1;
 
         for (const [zoneName, criteria] of Object.entries(zones)) {
             let totalScore = 0;
@@ -61,12 +61,12 @@ function getZoneForAirport(airportInfo, awardProgramCode, zoneType) {
             totalScore += regionResult.specificity;
 
             //Country match
-            const countryResult = matchField(criteria.country, airportLocation.country);
+            const countryResult = matchField(criteria.country, airportInfo.country);
             if (!countryResult.match) continue;
             totalScore += countryResult.specificity;
 
             //Continent match
-            const continentResult = matchField(criteria.continent, airportLocation.continent);
+            const continentResult = matchField(criteria.continent, airportInfo.continent);
             if (!continentResult.match) continue;
             totalScore += continentResult.specificity;    
 

@@ -4,6 +4,8 @@ const cors = require('cors');
 const app = express();
 const PORT = 5000;
 
+app.use(express.json()); 
+
 // Enable CORS
 app.use(cors({
     origin: 'http://localhost:3000', // Allow requests only from this origin
