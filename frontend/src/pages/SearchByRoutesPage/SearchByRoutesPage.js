@@ -3,6 +3,7 @@ import { useLocation, useSearchParams } from 'react-router-dom';
 import './SearchByRoutesPage.css';
 import AirportTable from './AirportTable';
 import RedemptionTable from './RedemptionTable';
+import { fetchAirportDetails } from '../../utils/api/fetchData'; 
 
 function SearchByRoutesPage() {
   const location = useLocation();
@@ -19,8 +20,7 @@ function SearchByRoutesPage() {
     } else {
       return searchParams.getAll('airport');
     }
-  }
-  , [stateAirports, searchParams]);
+  }, [stateAirports, searchParams]);
 
   const [airportDetails, setAirportDetails] = useState({});
 
@@ -32,8 +32,7 @@ function SearchByRoutesPage() {
     isFetchingRef.current = true;
 
     const codesToFetch = airportList
-      .map(airport => airport)
-      .filter((code) => code && !fetchedCodesRef.current.has(code));
+      .filter(code => code && !fetchedCodesRef.current.has(code));
 
     if (codesToFetch.length === 0) {
       isFetchingRef.current = false;
@@ -42,15 +41,7 @@ function SearchByRoutesPage() {
 
     const fetchDetails = async () => {
       try {
-        const results = await Promise.all(
-          codesToFetch.map(async (code) => {
-            //Endpoint should be modified
-            const response = await fetch(`http://localhost:5000/api/search-airport?search=${encodeURIComponent(code)}`);
-            const data = await response.json();
-            console.log("data:", data);
-            return { code, data };
-          })
-        );
+        const results = await fetchAirportDetails(codesToFetch);
         
         results.forEach(({ code }) => {
           fetchedCodesRef.current.add(code);
@@ -77,6 +68,7 @@ function SearchByRoutesPage() {
 
     fetchDetails();
   }, [airportList]);
+
   console.log("airportDetails:", airportDetails);
 
   return (
@@ -100,9 +92,9 @@ function SearchByRoutesPage() {
             <div className="route-container">
               <h2>Route Information</h2>
               <h3>Airports</h3>
-              <AirportTable airportInfo={airportDetails}/>
+              <AirportTable airportInfo={airportDetails} />
               <h3>Redemption Choices</h3>
-              <RedemptionTable airportInfo={airportDetails}/>
+              <RedemptionTable airportInfo={airportDetails} />
             </div>
           </div>
         </div>

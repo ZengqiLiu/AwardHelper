@@ -71,3 +71,16 @@ export async function fetchDistance(lat1, lon1, lat2, lon2) {
     return null;
   }
 }
+
+export async function fetchAirportDetails(codes) {
+  const results = await Promise.all(
+    codes.map(async (code) => {
+      const response = await fetch(
+        `http://localhost:5000/api/search-airport?search=${encodeURIComponent(code)}`
+      );
+      const data = await response.json();
+      return { code, data };
+    })
+  );
+  return results;
+}
