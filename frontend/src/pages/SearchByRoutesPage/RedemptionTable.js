@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Table from '../../components/Table';
-import { fetchAwardPrograms, fetchProgramDetails, fetchAirportZone } from '../../utils/api/fetchData';
+import { fetchAwardPrograms, fetchProgramDetails, fetchRouteDetails } from '../../utils/api/fetchData';
 import { extractProgramCode } from '../../utils/extractProgramCode';
 
 function RedemptionTable({ airportInfo }) {
@@ -9,7 +9,11 @@ function RedemptionTable({ airportInfo }) {
     { label: 'Operating Airlines', field: 'operating_airlines' },
     { label: 'Departing Zone', field: 'departing_zone' },
     { label: 'Arriving Zone', field: 'arriving_zone' },
-    { label: 'Miles Required', field: 'miles_required' }
+    { label: 'Distance', field: 'distance' },
+    { label: 'Economy', field: 'economy' },
+    { label: 'Premium Economy', field: 'premium_economy' },
+    { label: 'Business', field: 'business' },
+    { label: 'First', field: 'first' }
   ];
 
   const [rows, setRows] = useState([]);
@@ -22,9 +26,6 @@ function RedemptionTable({ airportInfo }) {
         console.error("Not enough airport data.");
         return;
       }
-      // Use the first airport as departure and the last as arrival.
-      const departureAirport = airportArray[0];
-      const arrivalAirport = airportArray[airportArray.length - 1];
 
       // Fetch grouped award programs and flatten into an array.
       const groups = await fetchAwardPrograms();
@@ -35,7 +36,7 @@ function RedemptionTable({ airportInfo }) {
         return acc;
       }, []);
 
-      // For each issuing program, fetch its details.
+      // For each issuing program, fetch its details and then get route details
       // For each program, check if selfTableAirlines, partnerTableAirlines, or specialTableAirlines exists.
       // Create a separate row for each one.
       const rowsNested = await Promise.all(
@@ -47,31 +48,81 @@ function RedemptionTable({ airportInfo }) {
 
           if (details.selfTableAirlines) {
             const selfCodes = details.selfTableAirlines.map(a => a.code);
-            const selfZoneDeparture = await fetchAirportZone(departureAirport.iso_region, departureAirport.iso_country, departureAirport.continent, code, 'self');
-            const selfZoneArrival = await fetchAirportZone(arrivalAirport.iso_region, arrivalAirport.iso_country, arrivalAirport.continent, code, 'self');
+            const routeDetails = await fetchRouteDetails(airportArray, code, 'self');
+            let departing_zone = '-';
+            let arriving_zone = '-';
+            let distanceRange = '-';
+            let cost = { economy: '-', premiumEconomy: '-', business: '-', first: '-' };
+
+            if (routeDetails) {
+                if (routeDetails.zones && routeDetails.zones.length > 0) {
+                  departing_zone = routeDetails.zones[0];
+                  arriving_zone = routeDetails.zones[routeDetails.zones.length - 1];
+                }
+                if (routeDetails.segments && routeDetails.segments.length > 0) {
+                  const segment = routeDetails.segments[0];
+                  distanceRange = segment.distanceRange || '-';
+                  cost = segment.cost;
+                }
+            }
+
             programRows.push({
               issuing_program: program.issuing_program,
               operating_airlines: selfCodes.join(', '),
-              departing_zone: selfZoneDeparture,
-              arriving_zone: selfZoneArrival
+              departing_zone: departing_zone,
+              arriving_zone: arriving_zone,
+              distance: distanceRange,
+              economy: cost.economy,
+              premium_economy: cost.premiumEconomy,
+              business: cost.business,
+              first: cost.first
             });
           }
+
           if (details.partnerTableAirlines) {
             const partnerCodes = details.partnerTableAirlines.map(a => a.code);
-            const partnerZoneDeparture = await fetchAirportZone(departureAirport.iso_region, departureAirport.iso_country, departureAirport.continent, code, 'partner');
-            const partnerZoneArrival = await fetchAirportZone(arrivalAirport.iso_region, arrivalAirport.iso_country, arrivalAirport.continent, code, 'partner');
+            const routeDetails = await fetchRouteDetails(airportArray, code, 'partner');
+            let departing_zone = '-';
+            let arriving_zone = '-';
+            let distanceRange = '-';
+            let cost = { economy: '-', premiumEconomy: '-', business: '-', first: '-' };
+
+            if (routeDetails) {
+              if (routeDetails.zones && routeDetails.zones.length > 0) {
+                departing_zone = routeDetails.zones[0];
+                arriving_zone = routeDetails.zones[routeDetails.zones.length - 1];
+              }
+              if (routeDetails.segments && routeDetails.segments.length > 0) {
+                const segment = routeDetails.segments[0];
+                distanceRange = segment.distanceRange || '-';
+                cost = segment.cost || { economy: '-', premiumEconomy: '-', business: '-', first: '-' };
+              }
+            }
+
             programRows.push({
               issuing_program: program.issuing_program,
               operating_airlines: partnerCodes.join(', '),
-              departing_zone: partnerZoneDeparture,
-              arriving_zone: partnerZoneArrival
+              departing_zone: departing_zone,
+              arriving_zone: arriving_zone,
+              distance: distanceRange,
+              economy: cost.economy,
+              premium_economy: cost.premiumEconomy,
+              business: cost.business,
+              first: cost.first
             });
           }
           if (details.specialTableAirlines) {
             const specialCodes = details.specialTableAirlines.map(a => a.code);
             programRows.push({
               issuing_program: program.issuing_program,
-              operating_airlines: specialCodes.join(', ')
+              operating_airlines: specialCodes.join(', '),
+              departing_zone: '-',
+              arriving_zone: '-',
+              distance: '-',
+              economy: '-',
+              premium_economy: '-',
+              business: '-',
+              first: '-'
             });
           }
           return programRows;

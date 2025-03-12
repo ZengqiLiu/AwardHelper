@@ -27,12 +27,11 @@ function getRequiredPoints(route, actualDistance) {
 
     // Convert actualDistance to route unit if necessary
     let distance = actualDistance;
-    if (actualUnit !== routeUnit) {
-        if (actualUnit === "km" && routeUnit === "mi") {
+    if (routeUnit == 'mi') {
         distance = actualDistance * 0.621371;
-        } else if (actualUnit === "mi" && routeUnit === "km") {
-        distance = actualDistance / 0.621371;
-        }
+    } else {
+        distance = actualDistance;
+        
     }
   
     if (distance >= minDistance && distance <= maxDistance) {
