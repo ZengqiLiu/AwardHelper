@@ -36,6 +36,7 @@ function matchField(criteria, inputValue) {
  * Returns the best matching zone for a given airport locationa and program
  * @param {Object} airportInfo - An object containing the airport's latitude, longitude, region, country, continent
  * @param {string} awardProgramCode - The award program code to load the information file
+ * @param {string} zoneType - Type of zone to match (e.g., 'self').
  * @returns {string|null} The best matching zone or null if no match is found
  */
 function getZoneForAirport(airportInfo, awardProgramCode, zoneType) {
@@ -49,6 +50,10 @@ function getZoneForAirport(airportInfo, awardProgramCode, zoneType) {
         // Read and parse the program data
         const programData = JSON.parse(fs.readFileSync(programFilePath, 'utf8'));
         const zones = (zoneType === 'self') ? programData.selfZones : (zoneType === 'partner')? programData.partnerZones : (zoneType === 'special')? programData.specialZones : null;
+        if (!zones || typeof zones !== 'object') {
+            console.error(`Zones property missing or invalid in program file for code: ${awardProgramCode}`);
+            return null;
+        }
 
         let bestMatch = null;
         let bestScore = -1;

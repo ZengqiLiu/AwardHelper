@@ -1,6 +1,6 @@
 [
-    { "group": "Star Alliance", "items": ["Air Canada(AC) — Aeroplan"] },
+    { "group": "Star Alliance", "items": [] },
     { "group": "Skyteam", "items": [] },
-    { "group": "Oneworld", "items": ["American Airlines(AA) — AAdvantage"] },
+    { "group": "Oneworld", "items": [] },
     { "group": "Others", "items": ["China Southern Airlines(CZ) — Sky Pearl Club"] }
 ]

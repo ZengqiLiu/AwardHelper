@@ -79,6 +79,7 @@ exports.searchAirport = async (req, res) => {
 };
 
 exports.getAirportZone = async (req, res) => {
+  console.log("Received body:", req.body); 
   const { region, country, continent, awardProgramCode, zoneType } = req.body;
   if (!region || !country || !continent || !awardProgramCode || !zoneType) {
     return res.status(400).json({ error: "Missing required fields" });

@@ -4,7 +4,7 @@ export async function fetchCountryName(isoCode) {
     try {
       const response = await fetch(`http://localhost:5000/api/country?code=${isoCode}`);
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`HTTP error when fetching country name! status: ${response.status}`);
       }
       const data = await response.json();
       return data.name;
@@ -18,7 +18,7 @@ export async function fetchContinentName(continentCode) {
     try {
       const response = await fetch('http://localhost:5000/api/continents');
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`HTTP error when fetching continents! status: ${response.status}`);
       }
       const data = await response.json();
       console.log(data);
@@ -33,7 +33,7 @@ export async function fetchAwardPrograms() {
   try {
     const response = await fetch('http://localhost:5000/api/award-programs');
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error when fetching award programs! status: ${response.status}`);
     }
     const data = await response.json();
     return data;
@@ -62,7 +62,7 @@ export async function fetchDistance(lat1, lon1, lat2, lon2) {
   try {
     const response = await fetch(`http://localhost:5000/api/distance?lat1=${lat1}&lon1=${lon1}&lat2=${lat2}&lon2=${lon2}`);
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error when fetching distance! status: ${response.status}`);
     }
     const data = await response.json();
     return data;
@@ -100,7 +100,7 @@ export async function fetchAirportZone(region, country, continent, awardProgramC
     })
   });
   if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+    throw new Error(`HTTP error when fetching airport zone! status: ${response.status}`);
   }
   const data = await response.json();
   return data;
