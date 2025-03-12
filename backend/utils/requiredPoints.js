@@ -12,6 +12,9 @@
  * @returns {Object|null} - The cost object if the distance matches, or null otherwise.
  */
 function getRequiredPoints(route, actualDistance) {
+    if (!route.distance) {
+        return route.cost;
+    }
     // Expected format: "7701-10000km" or "7701-10000mi"
     const distancePattern = /^(\d+)-(\d+)(km|mi)$/i;
     const match = route.distance.match(distancePattern);

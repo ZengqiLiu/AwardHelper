@@ -49,6 +49,7 @@ function RedemptionTable({ airportInfo }) {
           if (details.selfTableAirlines) {
             const selfCodes = details.selfTableAirlines.map(a => a.code);
             const routeDetails = await fetchRouteDetails(airportArray, code, 'self');
+            console.log("Route details for self:", routeDetails);
             let departing_zone = '-';
             let arriving_zone = '-';
             let distanceRange = '-';
@@ -82,6 +83,7 @@ function RedemptionTable({ airportInfo }) {
           if (details.partnerTableAirlines) {
             const partnerCodes = details.partnerTableAirlines.map(a => a.code);
             const routeDetails = await fetchRouteDetails(airportArray, code, 'partner');
+            console.log("Route details for partner:", routeDetails);
             let departing_zone = '-';
             let arriving_zone = '-';
             let distanceRange = '-';

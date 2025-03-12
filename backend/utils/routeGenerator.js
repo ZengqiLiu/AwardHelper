@@ -1,4 +1,5 @@
 // utils/routeGenerator.js
+const { extractContent } = require('./contentExtractor');
 const path = require('path');
 const fs = require('fs');
 
@@ -37,11 +38,18 @@ function getRoutesForZonePair(awardProgramCode, zoneType, departureZone, landing
       console.error(`Routes is not an array for zoneType: ${zoneType}`);
       return [];
     }
-    
+
+
+    const depZoneStd = extractContent(departureZone);
+    const arrZoneStd = extractContent(landingZone);
+
     // Filter the routes to only include those that match the departure and landing zones.
     const filteredRoutes = routes.filter(route => {
-      return route.departureZone === departureZone && route.landingZone === landingZone;
+      const routeDep = extractContent(route.departureZone);
+      const routeArr = extractContent(route.landingZone);
+      return ((routeDep === depZoneStd && routeArr === arrZoneStd) || (routeDep === arrZoneStd && routeArr === depZoneStd));
     });
+    console.log(`Filtered routes for ${awardProgramCode}, ${zoneType}, ${departureZone}, ${landingZone}:`, filteredRoutes);
     
     return filteredRoutes;
   } catch (error) {
