@@ -84,3 +84,24 @@ export async function fetchAirportDetails(codes) {
   );
   return results;
 }
+
+export async function fetchAirportZone(region, country, continent, awardProgramCode, zoneType) {
+  const response = await fetch('http://localhost:5000/api/get-airport-zone', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      region,
+      country,
+      continent,
+      awardProgramCode,
+      zoneType
+    })
+  });
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  const data = await response.json();
+  return data;
+}
