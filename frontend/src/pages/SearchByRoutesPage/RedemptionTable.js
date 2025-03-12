@@ -8,7 +8,8 @@ function RedemptionTable({ airportInfo }) {
     { label: 'Issuing Program', field: 'issuing_program' },
     { label: 'Operating Airlines', field: 'operating_airlines' },
     { label: 'Departing Zone', field: 'departing_zone' },
-    { label: 'Arriving Zone', field: 'arriving_zone' }
+    { label: 'Arriving Zone', field: 'arriving_zone' },
+    { label: 'Miles Required', field: 'miles_required' }
   ];
 
   const [rows, setRows] = useState([]);

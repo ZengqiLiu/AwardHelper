@@ -105,3 +105,17 @@ export async function fetchAirportZone(region, country, continent, awardProgramC
   const data = await response.json();
   return data;
 }
+
+export async function fetchRouteDetails(airportInfo, awardProgramCode, zoneType) {
+  const response = await fetch('http://localhost:5000/api/get-route-details', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ airportInfo, awardProgramCode, zoneType })
+  });
+  if (!response.ok) {
+    throw new Error(`HTTP error when fetching route details! status: ${response.status}`);
+  }
+  return await response.json();
+}
