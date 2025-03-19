@@ -2,14 +2,16 @@ import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import AwardProgramInput from './AwardProgramInput';
-import './HomePage.css';
 import RoutesInput from './RoutesInput';
+import OperatorInput from './OperatorInput';
+import './HomePage.css';
 import { extractProgramCode } from '../../utils/extractProgramCode';
 import { extractIataCode } from '../../utils/extractIataCode';
 
 function HomePage() {
   const awardProgramInputRef = useRef(); // Ref for AwardProgramInput
   const routeInputRef = useRef();
+  const operatorInputRef = useRef();
   const navigate = useNavigate();
   
   const handleProgramSearch = () => {
@@ -84,6 +86,20 @@ function HomePage() {
 
             <div className="input-content">
               <RoutesInput ref={routeInputRef} />
+            </div>
+          </div>
+        </div>
+        {/* Search By Operating Airlines */}
+        <div className="block">
+          <div className="block-content">
+            <div className="text-content">
+              <h2>Search By Operating Airlines</h2>
+              <p>Have a specific airline to take on? Find your cheapest choice here.</p>
+              <Button text={"Search"} onClick={() => alert("TBD")} />
+            </div>
+
+            <div className="input-content">
+              <OperatorInput ref={operatorInputRef}/>
             </div>
           </div>
         </div>
